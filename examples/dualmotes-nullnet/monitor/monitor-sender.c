@@ -90,15 +90,7 @@ uint8_t   flag;
  */ 
 uint8_t power = 31;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-linkaddr_t sink_addr = {{ 0x00, 0x12, 0x4b, 0x00, 0x14, 0xd5, 0x2d, 0xc5 }};
-=======
-linkaddr_t sink_addr = {{ 0x00, 0x12, 0x4b, 0x00, 0x14, 0xd5, 0x2d, 0xc9 }};
->>>>>>> 94fd7e0a3f585cf8c4b79219d7741a549e587e30
-=======
 linkaddr_t sink_addr = {{ 0x00, 0x12, 0x4b, 0x00, 0x18, 0xe6, 0x9d, 0x4b }};
->>>>>>> 5ef55943a87999da38595b667a8427b8c3fb32c3
 
 
 //static void send_packet(gpio_hal_pin_mask_t pin_mask);
