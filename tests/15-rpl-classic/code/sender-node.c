@@ -27,7 +27,6 @@
  * SUCH DAMAGE.
  */
 
-
 #include "contiki.h"
 #include "lib/random.h"
 #include "sys/ctimer.h"
