@@ -35,11 +35,16 @@
 #include "net/ipv6/uip.h"
 #include "net/ipv6/uip-ds6.h"
 #include "net/ipv6/uip-debug.h"
+#include "project-conf.h"
 
 #include "simple-udp.h"
 
 #include <stdio.h>
 #include <string.h>
+
+#include "sys/energest.h"
+#include "dev/gpio.h"
+#include "dev/ioc.h"
 
 #define UDP_PORT 1234
 
