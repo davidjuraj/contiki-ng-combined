@@ -1,6 +1,6 @@
 [submodule "tools/cc2538-bsl"]
 	path = tools/cc2538-bsl
-	url = https://github.com/JelmerT/cc2538-bsl.git
+	url = https://github.com/JelmerT/cc2538-bsl
 [submodule "arch/cpu/cc26xx-cc13xx/lib/cc26xxware"]
 	path = arch/cpu/cc26x0-cc13x0/lib/cc26xxware
 	url = https://github.com/contiki-ng/cc26xxware.git
@@ -9,10 +9,10 @@
 	url = https://github.com/contiki-ng/cc13xxware.git
 [submodule "tools/sensniff"]
 	path = tools/sensniff
-	url = https://github.com/g-oikonomou/sensniff.git
+	url = https://github.com/g-oikonomou/sensniff
 [submodule "tools/cooja"]
 	path = tools/cooja
-	url = https://github.com/contiki-ng/cooja.git
+	url = https://github.com/contiki-ng/cooja
 [submodule "os/net/security/tinydtls"]
 	path = os/net/security/tinydtls
 	url = https://github.com/contiki-ng/tinydtls.git
