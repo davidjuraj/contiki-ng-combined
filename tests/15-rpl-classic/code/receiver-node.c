@@ -35,6 +35,7 @@
 #include "net/ipv6/uip-ds6.h"
 #include "net/ipv6/uip-ds6-route.h"
 #include "net/ipv6/uip-debug.h"
+#include "project-conf.h"
 
 #include "simple-udp.h"
 
@@ -44,14 +45,126 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "sys/energest.h"
+#include "dev/gpio.h"
+#include "dev/ioc.h"
+
 #define UDP_PORT 1234
 
 static struct simple_udp_connection unicast_connection;
 
+#if ENERGEST_CONF_ON
+const linkaddr_t energest_addr = {{ 0x00, 0x12, 0x4b, 0x00, 0x14, 0xd5, 0x2d, 0xe1 }};
+#endif
+
+uint16_t seqno=0;
+struct energestmsg prev_energest_vals;
 /*---------------------------------------------------------------------------*/
 PROCESS(receiver_node_process, "Receiver node");
 AUTOSTART_PROCESSES(&receiver_node_process);
 /*---------------------------------------------------------------------------*/
+void
+GPIOS_init(void)
+{
+
+    ioc_set_over(0, 6, IOC_OVERRIDE_OE);
+    ioc_set_over(0, 7, IOC_OVERRIDE_OE);
+    ioc_set_over(2, 0, IOC_OVERRIDE_OE);
+    ioc_set_over(2, 1, IOC_OVERRIDE_OE);
+    ioc_set_over(2, 2, IOC_OVERRIDE_OE);
+    ioc_set_over(2, 3, IOC_OVERRIDE_OE);
+    ioc_set_over(2, 4, IOC_OVERRIDE_OE);
+    ioc_set_over(2, 5, IOC_OVERRIDE_OE);
+    ioc_set_over(2, 6, IOC_OVERRIDE_OE);
+    ioc_set_over(3, 0, IOC_OVERRIDE_OE);
+    ioc_set_over(3, 1, IOC_OVERRIDE_OE);
+    ioc_set_over(3, 2, IOC_OVERRIDE_OE);
+
+    GPIO_SOFTWARE_CONTROL(GPIO_A_BASE,GPIO_PIN_MASK(6));
+    GPIO_SOFTWARE_CONTROL(GPIO_A_BASE,GPIO_PIN_MASK(7));
+	GPIO_SET_OUTPUT(GPIO_A_BASE,GPIO_PIN_MASK(6));		//GPIO PA6
+	GPIO_SET_OUTPUT(GPIO_A_BASE,GPIO_PIN_MASK(7));		//GPIO PA7
+
+    GPIO_SOFTWARE_CONTROL(GPIO_C_BASE,GPIO_PIN_MASK(0));		//GPIO PC0
+	GPIO_SOFTWARE_CONTROL(GPIO_C_BASE,GPIO_PIN_MASK(1));		//GPIO PC1
+    GPIO_SOFTWARE_CONTROL(GPIO_C_BASE,GPIO_PIN_MASK(2));		//GPIO PC2
+    GPIO_SOFTWARE_CONTROL(GPIO_C_BASE,GPIO_PIN_MASK(3));		//GPIO PC3
+	GPIO_SOFTWARE_CONTROL(GPIO_C_BASE,GPIO_PIN_MASK(4));		//GPIO PC4
+	GPIO_SOFTWARE_CONTROL(GPIO_C_BASE,GPIO_PIN_MASK(5));		//GPIO PC5
+    GPIO_SOFTWARE_CONTROL(GPIO_C_BASE,GPIO_PIN_MASK(6));		//GPIO PC6
+  
+ 	GPIO_SET_OUTPUT(GPIO_C_BASE,GPIO_PIN_MASK(0));		//GPIO PC0
+	GPIO_SET_OUTPUT(GPIO_C_BASE,GPIO_PIN_MASK(1));		//GPIO PC1
+    GPIO_SET_OUTPUT(GPIO_C_BASE,GPIO_PIN_MASK(2));		//GPIO PC2
+    GPIO_SET_OUTPUT(GPIO_C_BASE,GPIO_PIN_MASK(3));		//GPIO PC3
+	GPIO_SET_OUTPUT(GPIO_C_BASE,GPIO_PIN_MASK(4));		//GPIO PC4
+	GPIO_SET_OUTPUT(GPIO_C_BASE,GPIO_PIN_MASK(5));		//GPIO PC5
+    GPIO_SET_OUTPUT(GPIO_C_BASE,GPIO_PIN_MASK(6));		//GPIO PC6
+
+    GPIO_SET_INPUT(GPIO_D_BASE,GPIO_PIN_MASK(0));		//GPIO PD0
+    GPIO_SET_INPUT(GPIO_D_BASE,GPIO_PIN_MASK(1));		//GPIO PD1
+	GPIO_SET_INPUT(GPIO_D_BASE,GPIO_PIN_MASK(2));		//GPIO PD2
+
+	GPIO_SET_OUTPUT(GPIO_D_BASE,GPIO_PIN_MASK(0));		//GPIO PD0
+    GPIO_SET_OUTPUT(GPIO_D_BASE,GPIO_PIN_MASK(1));		//GPIO PD1
+	GPIO_SET_OUTPUT(GPIO_D_BASE,GPIO_PIN_MASK(2));		//GPIO PD2
+
+    GPIO_CLR_PIN(GPIO_A_BASE,GPIO_PIN_MASK(6));		//GPIO PA6
+    
+}
+/*---------------------------------------------------------------------------*/
+void
+clear_GPIOS(void)
+{
+    GPIO_CLR_PIN(GPIO_A_BASE,GPIO_PIN_MASK(6));		//GPIO PA6
+	
+ 	GPIO_CLR_PIN(GPIO_C_BASE,GPIO_PIN_MASK(0));		//GPIO PC0
+	GPIO_CLR_PIN(GPIO_C_BASE,GPIO_PIN_MASK(1));		//GPIO PC1
+  	GPIO_CLR_PIN(GPIO_C_BASE,GPIO_PIN_MASK(2));		//GPIO PC2
+  	GPIO_CLR_PIN(GPIO_C_BASE,GPIO_PIN_MASK(3));		//GPIO PC3
+	GPIO_CLR_PIN(GPIO_C_BASE,GPIO_PIN_MASK(4));		//GPIO PC4
+	GPIO_CLR_PIN(GPIO_C_BASE,GPIO_PIN_MASK(5));		//GPIO PC5
+  	GPIO_CLR_PIN(GPIO_C_BASE,GPIO_PIN_MASK(6));		//GPIO PC6
+
+	GPIO_CLR_PIN(GPIO_D_BASE,GPIO_PIN_MASK(0));		//GPIO PD0
+  	GPIO_CLR_PIN(GPIO_D_BASE,GPIO_PIN_MASK(1));		//GPIO PD1
+	GPIO_CLR_PIN(GPIO_D_BASE,GPIO_PIN_MASK(2));		//GPIO PD2
+}
+/*---------------------------------------------------------------------------*/
+#if ENERGEST_CONF_ON
+static void
+send_energest()
+{
+    struct energestmsg energest_values;
+
+    energest_values.totaltime = RTIMER_NOW() - prev_energest_vals.totaltime;
+
+    energest_flush();
+    energest_values.cpu = energest_type_time(ENERGEST_TYPE_CPU) - prev_energest_vals.cpu;
+    energest_values.lpm = energest_type_time(ENERGEST_TYPE_LPM) - prev_energest_vals.lpm;
+    energest_values.transmit = energest_type_time(ENERGEST_TYPE_TRANSMIT) - prev_energest_vals.transmit;
+    energest_values.listen = energest_type_time(ENERGEST_TYPE_LISTEN) - prev_energest_vals.listen;
+    energest_values.seqno = seqno;
+
+    LOG_INFO("Energest data sent to ");
+	LOG_INFO_LLADDR(&energest_addr);
+  	LOG_INFO_("\n");
+
+    //nullnet_buf = (uint8_t *) &energest_values;
+    //nullnet_len = sizeof(energest_values);
+
+	NETSTACK_NETWORK.output(&energest_addr);
+
+    energest_flush();
+    prev_energest_vals.cpu = energest_type_time(ENERGEST_TYPE_CPU);
+    prev_energest_vals.lpm = energest_type_time(ENERGEST_TYPE_LPM);
+    prev_energest_vals.transmit = energest_type_time(ENERGEST_TYPE_TRANSMIT);
+    prev_energest_vals.listen = energest_type_time(ENERGEST_TYPE_LISTEN);
+    prev_energest_vals.totaltime = RTIMER_NOW();
+}
+#endif /* ENERGEST_CONF_ON */
+/*---------------------------------------------------------------------------*/
+int state = 0;
 static void
 receiver(struct simple_udp_connection *c,
          const uip_ipaddr_t *sender_addr,
@@ -61,10 +174,50 @@ receiver(struct simple_udp_connection *c,
          const uint8_t *data,
          uint16_t datalen)
 {
+    struct testmsg msg;
+    memcpy(&msg, data, datalen);
+
+    seqno++;
+
+    msg.seqno=seqno;
+
   printf("Data received from ");
   uip_debug_ipaddr_print(sender_addr);
   printf(" on port %d from port %d with length %d: '%s'\n",
          receiver_port, sender_port, datalen, data);
+         static uint8_t seqno_bits[IO_WIDTH];			
+    uint8_t i;
+    for (i = 0; i < IO_WIDTH; i++) {
+        seqno_bits[i] = msg.seqno & (1 << i) ? 1 : 0;
+    }		//least significant bit in seqno_bits[0]
+
+    clear_GPIOS();
+    
+    if ( seqno_bits[0]==1 )		GPIO_SET_PIN(GPIO_A_BASE,GPIO_PIN_MASK(6));       //  write a 1 in A6
+    if ( seqno_bits[1]==1 )		GPIO_SET_PIN(GPIO_C_BASE,GPIO_PIN_MASK(0));       //  write a 1 in C0
+    if ( seqno_bits[2]==1 )		GPIO_SET_PIN(GPIO_C_BASE,GPIO_PIN_MASK(1));       //  write a 1 in C1
+    if ( seqno_bits[3]==1 )		GPIO_SET_PIN(GPIO_C_BASE,GPIO_PIN_MASK(2));       //  write a 1 in C2
+    if ( seqno_bits[4]==1 )		GPIO_SET_PIN(GPIO_C_BASE,GPIO_PIN_MASK(3));       //  write a 1 in C3
+    if ( seqno_bits[5]==1 )		GPIO_SET_PIN(GPIO_C_BASE,GPIO_PIN_MASK(4));       //  write a 1 in C4
+    if ( seqno_bits[6]==1 )		GPIO_SET_PIN(GPIO_C_BASE,GPIO_PIN_MASK(5));       //  write a 1 in C5
+    if ( seqno_bits[7]==1 )		GPIO_SET_PIN(GPIO_C_BASE,GPIO_PIN_MASK(6));       //  write a 1 in C6
+    if ( seqno_bits[8]==1 )		GPIO_SET_PIN(GPIO_D_BASE,GPIO_PIN_MASK(0));       //  write a 1 in D0
+    if ( seqno_bits[9]==1 )		GPIO_SET_PIN(GPIO_D_BASE,GPIO_PIN_MASK(1));       //  write a 1 in D1
+    if ( seqno_bits[10]==1 )	GPIO_SET_PIN(GPIO_D_BASE,GPIO_PIN_MASK(2));       //  write a 1 in D2
+    
+    if (state == 0){
+        GPIO_SET_PIN(GPIO_A_BASE,GPIO_PIN_MASK(7));
+        state = 1;
+    }
+    else{
+        GPIO_CLR_PIN(GPIO_PORT_TO_BASE(0),GPIO_PIN_MASK(7));
+        state = 0;
+    }
+
+#if ENERGEST_CONF_ON
+    if (seqno%ENERGEST_FREQ==0)
+		send_energest();
+#endif
 }
 /*---------------------------------------------------------------------------*/
 static uip_ipaddr_t *
@@ -114,11 +267,20 @@ PROCESS_THREAD(receiver_node_process, ev, data)
 
   PROCESS_BEGIN();
 
+    prev_energest_vals.cpu = 0;
+    prev_energest_vals.lpm = 0;
+    prev_energest_vals.transmit = 0;
+    prev_energest_vals.listen = 0;
+    prev_energest_vals.seqno = 0;
+	  prev_energest_vals.totaltime = 0;
+
   set_global_address();
 
 #if RPL_WITH_STORING
   uip_ds6_notification_add(&n, route_callback);
 #endif /* #if RPL_WITH_STORING */
+
+  GPIOS_init();
 
   simple_udp_register(&unicast_connection, UDP_PORT,
                       NULL, UDP_PORT, receiver);
