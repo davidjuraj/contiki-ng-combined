@@ -103,7 +103,7 @@
  * @{
  */
 #ifndef UART_CONF_ENABLE
-#define UART_CONF_ENABLE            1 /**< Enable/Disable UART I/O */
+#define UART_CONF_ENABLE            0 /**< Enable/Disable UART I/O */
 #endif
 
 #ifndef UART0_CONF_BAUD_RATE
@@ -113,7 +113,6 @@
 #ifndef UART1_CONF_BAUD_RATE
 #define UART1_CONF_BAUD_RATE   115200 /**< Default UART1 baud rate */
 #endif
-
 #ifndef SLIP_ARCH_CONF_USB
 #define SLIP_ARCH_CONF_USB          0 /**< SLIP over UART by default */
 #endif
