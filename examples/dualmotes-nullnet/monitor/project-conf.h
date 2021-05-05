@@ -12,7 +12,10 @@
 #define IO_WIDTH 11
 
 // UART pins are used for parallel communication, serial comm over UART overwrites some pins
-#define UART_CONF_ENABLE 1
+#ifdef UART_CONF_ENABLE
+#undef UART_CONF_ENABLE
+#endif
+#define UART_CONF_ENABLE 0
 
 #include "stdint.h"
 

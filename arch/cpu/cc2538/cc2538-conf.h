@@ -103,7 +103,7 @@
  * @{
  */
 #ifndef UART_CONF_ENABLE
-#define UART_CONF_ENABLE            0 /**< Enable/Disable UART I/O */
+#define UART_CONF_ENABLE            1 /**< Enable/Disable UART I/O */
 #endif
 
 #ifndef UART0_CONF_BAUD_RATE
