@@ -162,7 +162,8 @@ send_energest()
     prev_energest_vals.listen = energest_type_time(ENERGEST_TYPE_LISTEN);
     prev_energest_vals.totaltime = RTIMER_NOW();
 }
-#endif /* ENERGEST_CONF_ON */ */
+#endif // ENERGEST_CONF_ON
+*/
 /*---------------------------------------------------------------------------*/
 int state = 0;
 static void
