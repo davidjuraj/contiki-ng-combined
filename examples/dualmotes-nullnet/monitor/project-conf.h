@@ -15,13 +15,5 @@
 #define UART_CONF_ENABLE 1
 
 #include "stdint.h"
-struct testmsg {
-    uint16_t  observed_seqno;
-    uint16_t monitor_seqno;
-    uint32_t energy;
-    uint16_t counter_ADC;
-    uint32_t timestamp_app;
-    uint32_t timestamp_mac;
-};
 
 #endif // PROJECT_CONF_H_
