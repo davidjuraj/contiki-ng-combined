@@ -6,20 +6,12 @@
 
 //#define ZOUL_CONF_USE_CC1200_RADIO 1
 #undef IEEE802154_CONF_DEFAULT_CHANNEL
-#define IEEE802154_CONF_DEFAULT_CHANNEL 20
+#define IEEE802154_CONF_DEFAULT_CHANNEL 17
 
 #define ENERGEST_FREQ 100       // every x messages a message is sent to the energest sink
 #define IO_WIDTH 11
 
 // UART pins are used for parallel communication, serial comm over UART overwrites some pins
-<<<<<<< HEAD
-#undef UART_CONF_ENABLE
-#define UART_CONF_ENABLE 0
-#undef USB_SERIAL_CONF_ENABLE
-#define USB_SERIAL_CONF_ENABLE 0
-
-#endif // PROJECT_CONF_H_p
-=======
 #define UART_CONF_ENABLE 1
 
 #include "stdint.h"
@@ -33,4 +25,3 @@ struct testmsg {
 };
 
 #endif // PROJECT_CONF_H_
->>>>>>> 37c9dabffb447a16f8c0157359f01fa9f8d22293

@@ -145,38 +145,38 @@ clear_GPIOS(void)
   	GPIO_CLR_PIN(GPIO_D_BASE,GPIO_PIN_MASK(2));		//GPIO PD2
 }
 /*---------------------------------------------------------------------------*/
-#if ENERGEST_CONF_ON
-static void
-send_energest()
-{
-    struct energestmsg energest_values;
+// #if ENERGEST_CONF_ON
+// static void
+// send_energest()
+// {
+//     struct energestmsg energest_values;
 
-    energest_values.totaltime = RTIMER_NOW() - prev_energest_vals.totaltime;
+//     energest_values.totaltime = RTIMER_NOW() - prev_energest_vals.totaltime;
 
-    energest_flush();
-    energest_values.cpu = energest_type_time(ENERGEST_TYPE_CPU) - prev_energest_vals.cpu;
-    energest_values.lpm = energest_type_time(ENERGEST_TYPE_LPM) - prev_energest_vals.lpm;
-    energest_values.transmit = energest_type_time(ENERGEST_TYPE_TRANSMIT) - prev_energest_vals.transmit;
-    energest_values.listen = energest_type_time(ENERGEST_TYPE_LISTEN) - prev_energest_vals.listen;
-    energest_values.seqno = seqno;
+//     energest_flush();
+//     energest_values.cpu = energest_type_time(ENERGEST_TYPE_CPU) - prev_energest_vals.cpu;
+//     energest_values.lpm = energest_type_time(ENERGEST_TYPE_LPM) - prev_energest_vals.lpm;
+//     energest_values.transmit = energest_type_time(ENERGEST_TYPE_TRANSMIT) - prev_energest_vals.transmit;
+//     energest_values.listen = energest_type_time(ENERGEST_TYPE_LISTEN) - prev_energest_vals.listen;
+//     energest_values.seqno = seqno;
 
-    LOG_INFO("Energest data sent to ");
-	LOG_INFO_LLADDR(&energest_addr);
-  	LOG_INFO_("\n");
+//     LOG_INFO("Energest data sent to ");
+// 	LOG_INFO_LLADDR(&energest_addr);
+//   	LOG_INFO_("\n");
 
-    //nullnet_buf = (uint8_t *) &energest_values;
-	//nullnet_len = sizeof(energest_values);
+//     //nullnet_buf = (uint8_t *) &energest_values;
+// 	//nullnet_len = sizeof(energest_values);
 
-	NETSTACK_NETWORK.output(&energest_addr);
+// 	NETSTACK_NETWORK.output(&energest_addr);
 
-    energest_flush();
-    prev_energest_vals.cpu = energest_type_time(ENERGEST_TYPE_CPU);
-    prev_energest_vals.lpm = energest_type_time(ENERGEST_TYPE_LPM);
-    prev_energest_vals.transmit = energest_type_time(ENERGEST_TYPE_TRANSMIT);
-    prev_energest_vals.listen = energest_type_time(ENERGEST_TYPE_LISTEN);
-    prev_energest_vals.totaltime = RTIMER_NOW();
-}
-#endif /* ENERGEST_CONF_ON */
+//     energest_flush();
+//     prev_energest_vals.cpu = energest_type_time(ENERGEST_TYPE_CPU);
+//     prev_energest_vals.lpm = energest_type_time(ENERGEST_TYPE_LPM);
+//     prev_energest_vals.transmit = energest_type_time(ENERGEST_TYPE_TRANSMIT);
+//     prev_energest_vals.listen = energest_type_time(ENERGEST_TYPE_LISTEN);
+//     prev_energest_vals.totaltime = RTIMER_NOW();
+// }
+// #endif /* ENERGEST_CONF_ON */
 /*---------------------------------------------------------------------------*/
 static void
 set_global_address(void)
@@ -249,10 +249,10 @@ struct testmsg msg;
 	NETSTACK_NETWORK.output(&recv_addr);
 #endif
 
-#if ENERGEST_CONF_ON
-	if (seqno%ENERGEST_FREQ==0)
-	send_energest();
-#endif
+// #if ENERGEST_CONF_ON
+// 	if (seqno%ENERGEST_FREQ==0)
+// 	send_energest();
+// #endif
 
   static unsigned int message_number;
       char buf[20];
