@@ -131,7 +131,7 @@ clear_GPIOS(void)
 	GPIO_CLR_PIN(GPIO_D_BASE,GPIO_PIN_MASK(2));		//GPIO PD2
 }
 /*---------------------------------------------------------------------------*/
-#if ENERGEST_CONF_ON
+/* #if ENERGEST_CONF_ON
 static void
 send_energest()
 {
@@ -147,7 +147,7 @@ send_energest()
     energest_values.seqno = seqno;
 
     LOG_INFO("Energest data sent to ");
-	LOG_INFO_LLADDR(&energest_addr);
+	  LOG_INFO_LLADDR(&energest_addr);
   	LOG_INFO_("\n");
 
     //nullnet_buf = (uint8_t *) &energest_values;
@@ -162,7 +162,7 @@ send_energest()
     prev_energest_vals.listen = energest_type_time(ENERGEST_TYPE_LISTEN);
     prev_energest_vals.totaltime = RTIMER_NOW();
 }
-#endif /* ENERGEST_CONF_ON */
+#endif /* ENERGEST_CONF_ON */ */
 /*---------------------------------------------------------------------------*/
 int state = 0;
 static void
@@ -214,10 +214,10 @@ receiver(struct simple_udp_connection *c,
         state = 0;
     }
 
-#if ENERGEST_CONF_ON
+/* #if ENERGEST_CONF_ON
     if (seqno%ENERGEST_FREQ==0)
 		send_energest();
-#endif
+#endif */
 }
 /*---------------------------------------------------------------------------*/
 static uip_ipaddr_t *
