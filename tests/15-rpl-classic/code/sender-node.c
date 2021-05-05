@@ -161,8 +161,8 @@ clear_GPIOS(void)
 //     energest_values.seqno = seqno;
 
 //     LOG_INFO("Energest data sent to ");
-// 	LOG_INFO_LLADDR(&energest_addr);
-//   	LOG_INFO_("\n");
+// 	   LOG_INFO_LLADDR(&energest_addr);
+//   	 LOG_INFO_("\n");
 
 //     //nullnet_buf = (uint8_t *) &energest_values;
 // 	//nullnet_len = sizeof(energest_values);
@@ -291,11 +291,12 @@ PROCESS_THREAD(sender_node_process, ev, data)
     default_prefix = uip_ds6_default_prefix();
     uip_ip6addr_copy(&addr, default_prefix);
 
-    addr.u16[4] = UIP_HTONS(0x0201);
-    addr.u16[5] = UIP_HTONS(0x0001);
-    addr.u16[6] = UIP_HTONS(0x0001);
-    addr.u16[7] = UIP_HTONS(0x0001);
+    addr.u16[4] = UIP_HTONS(0x0212);
+    addr.u16[5] = UIP_HTONS(0x4b00);
+    addr.u16[6] = UIP_HTONS(0x1932);
+    addr.u16[7] = UIP_HTONS(0x9d87);
 
+    // 0x00, 0x12, 0x4b, 0x00, 0x19, 0x32, 0x9d, 0x87
     send_packet();
   }
 
