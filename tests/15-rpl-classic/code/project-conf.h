@@ -51,6 +51,8 @@
 #define UART_CONF_ENABLE 1
 #define USB_SERIAL_CONF_ENABLE 0
 
+#define LOG_CONF_LEVEL_RPL LOG_LEVEL_DBG
+
 /* Data structure of messages sent from sender
  *
  */
