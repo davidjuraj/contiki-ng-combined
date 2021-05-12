@@ -47,7 +47,7 @@
 
 #define UDP_PORT 1234
 
-#define SEND_INTERVAL		(60 * CLOCK_SECOND)
+#define SEND_INTERVAL		(CLOCK_SECOND)
 #define SEND_TIME		(random_rand() % (SEND_INTERVAL))
 
 static struct simple_udp_connection unicast_connection;
@@ -287,7 +287,7 @@ PROCESS_THREAD(sender_node_process, ev, data)
 
     addr.u16[4] = UIP_HTONS(0x0212);
     addr.u16[5] = UIP_HTONS(0x4b00);
-    addr.u16[6] = UIP_HTONS(0x1932);
+    addr.u16[6] = UIP_HTONS(0x18e6);
     addr.u16[7] = UIP_HTONS(0x9d87);
 
     // 0x00, 0x12, 0x4b, 0x00, 0x19, 0x32, 0x9d, 0x87
