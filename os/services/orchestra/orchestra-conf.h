@@ -74,13 +74,13 @@
 #ifdef ORCHESTRA_CONF_UNICAST_PERIOD
 #define ORCHESTRA_UNICAST_PERIOD                  ORCHESTRA_CONF_UNICAST_PERIOD
 #else /* ORCHESTRA_CONF_UNICAST_PERIOD */
-#define ORCHESTRA_UNICAST_PERIOD                  17
+#define ORCHESTRA_UNICAST_PERIOD                  17 /* play with this value */
 #endif /* ORCHESTRA_CONF_UNICAST_PERIOD */
 
 #ifdef ORCHESTRA_CONF_BROADCAST_PERIOD
 #define ORCHESTRA_BROADCAST_PERIOD                  ORCHESTRA_CONF_BROADCAST_PERIOD
 #else /* ORCHESTRA_CONF_BROADCAST_PERIOD */
-#define ORCHESTRA_BROADCAST_PERIOD                  21
+#define ORCHESTRA_BROADCAST_PERIOD                  21 /* play with this value */
 #endif /* ORCHESTRA_CONF_BROADCAST_PERIOD */
 
 /* Is the per-neighbor unicast slotframe sender-based (if not, it is receiver-based).

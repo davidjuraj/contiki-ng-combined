@@ -64,6 +64,10 @@ static uint16_t channel_offset = 0;
 static struct tsch_slotframe *sf_broadcast;
 
 /*---------------------------------------------------------------------------*/
+/* RPL control messages must reach all the nodes in range, regardless if they are 
+   part of the multicast group or not. That is why they are filtered out and nodes 
+   do not use this rule when forwarding this kind of traffic. */
+/*---------------------------------------------------------------------------*/
 static int
 is_RPL_traffic()
 {
@@ -89,7 +93,8 @@ add_bc_link(const linkaddr_t *linkaddr)
 {
   if(linkaddr != NULL) {
     uint16_t timeslot = get_node_timeslot(linkaddr);
-    uint8_t link_options = LINK_OPTION_RX;
+    uint8_t link_options = LINK_OPTION_RX; /* link options: LINK_OPTION_RX, 
+                                              LINK_OPTION_TX, BROADCAST_SLOT_SHARED_FLAG */
 
     PRINTF("Add child and link \n");
 
@@ -166,6 +171,8 @@ child_removed(const linkaddr_t *linkaddr)
 {
   remove_bc_link(linkaddr);
 }
+/*---------------------------------------------------------------------------*/
+/* With the code below only the data broadcast packets are selected  */
 /*---------------------------------------------------------------------------*/
 static int
 select_packet(uint16_t *slotframe, uint16_t *timeslot)

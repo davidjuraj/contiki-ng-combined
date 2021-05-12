@@ -63,7 +63,7 @@ extern int orchestra_parent_knows_us;
 
 /* Call from application to start Orchestra */
 void orchestra_init(void);
-/* Callbacks requied for Orchestra to operate */
+/* Callbacks required for Orchestra to operate */
 /* Set with #define TSCH_CALLBACK_PACKET_READY orchestra_callback_packet_ready */
 void orchestra_callback_packet_ready(void);
 /* Set with #define TSCH_CALLBACK_NEW_TIME_SOURCE orchestra_callback_new_time_source */
