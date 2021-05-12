@@ -202,7 +202,7 @@ set_global_address(void)
 }
 /*---------------------------------------------------------------------------*/
 int state = 0;
-static void send_packet(const uip_ipaddr_t *addr)
+static void send_packet(const uip_ipaddr_t addr)
 {
   //uip_ipaddr_t addr;
 
@@ -291,7 +291,7 @@ PROCESS_THREAD(sender_node_process, ev, data)
     addr.u16[7] = UIP_HTONS(0x9d87);
 
     // 0x00, 0x12, 0x4b, 0x00, 0x19, 0x32, 0x9d, 0x87
-    send_packet(&addr);
+    send_packet(addr);
   }
 
   PROCESS_END();

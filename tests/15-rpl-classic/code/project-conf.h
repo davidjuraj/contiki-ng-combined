@@ -48,7 +48,7 @@
 #define IO_WIDTH 11
 
 // UART pins are used for parallel communication, serial comm over UART overwrites some pins
-#define UART_CONF_ENABLE 1
+#define UART_CONF_ENABLE 0
 #define USB_SERIAL_CONF_ENABLE 0
 
 /* Data structure of messages sent from sender
