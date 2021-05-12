@@ -30,13 +30,13 @@
 #ifndef PROJECT_CONF_H_
 #define PROJECT_CONF_H_
 
-#define TCPIP_CONF_ANNOTATE_TRANSMISSIONS 1 //hereeeeeeeeeeee comment
+// #define TCPIP_CONF_ANNOTATE_TRANSMISSIONS 1 //hereeeeeeeeeeee comment
 #define LOG_LEVEL_CONF_MAC LOG_LEVEL_DBG
 
 #include "stdint.h"
 
 //#define LOG_CONF_LEVEL_NULLNET LOG_LEVEL_INFO
-#define ENERGEST_CONF_ON 1      // set this to 0 to also not sned to the energest-sink
+#define ENERGEST_CONF_ON 0      // set this to 0 to also not sned to the energest-sink
 #define ENERGEST_FREQ 100       // every x messages a message is sent to the energest sink
 
 #define BC 0 // Broadcast test or not

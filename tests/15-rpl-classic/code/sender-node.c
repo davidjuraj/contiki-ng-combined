@@ -202,9 +202,9 @@ set_global_address(void)
 }
 /*---------------------------------------------------------------------------*/
 int state = 0;
-static void send_packet()
+static void send_packet(const uip_ipaddr_t *addr)
 {
-  uip_ipaddr_t addr;
+  //uip_ipaddr_t addr;
 
 struct testmsg msg;
 
@@ -243,26 +243,20 @@ struct testmsg msg;
 		state = 0;
 	}
 
-#if BC
-	NETSTACK_NETWORK.output(NULL);
-#else
-	NETSTACK_NETWORK.output(&recv_addr);
-#endif
-
 // #if ENERGEST_CONF_ON
 // 	if (seqno%ENERGEST_FREQ==0)
 // 	send_energest();
 // #endif
 
   static unsigned int message_number;
-      char buf[20];
+  char buf[20];
 
-      printf("Sending unicast to ");
-      uip_debug_ipaddr_print(&addr);
-      printf("\n");
-      sprintf(buf, "Message %d", message_number);
-      message_number++;
-      simple_udp_sendto(&unicast_connection, buf, strlen(buf) + 1, &addr);
+  printf("Sending unicast to ");
+  uip_debug_ipaddr_print(&addr);
+  printf("\n");
+  sprintf(buf, "Message %d", message_number);
+  message_number++;
+  simple_udp_sendto(&unicast_connection, buf, strlen(buf) + 1, &addr);
 }
 /*---------------------------------------------------------------------------*/
 PROCESS_THREAD(sender_node_process, ev, data)
@@ -297,7 +291,7 @@ PROCESS_THREAD(sender_node_process, ev, data)
     addr.u16[7] = UIP_HTONS(0x9d87);
 
     // 0x00, 0x12, 0x4b, 0x00, 0x19, 0x32, 0x9d, 0x87
-    send_packet();
+    send_packet(&addr);
   }
 
   PROCESS_END();
