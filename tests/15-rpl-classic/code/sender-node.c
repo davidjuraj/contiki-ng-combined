@@ -268,6 +268,8 @@ PROCESS_THREAD(sender_node_process, ev, data)
 
   PROCESS_BEGIN();
 
+  GPIOS_init();
+
   set_global_address();
 
   simple_udp_register(&unicast_connection, UDP_PORT,
