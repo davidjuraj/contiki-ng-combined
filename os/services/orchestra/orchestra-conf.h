@@ -50,7 +50,8 @@
 #ifdef ORCHESTRA_DOWNWARDS_BROADCAST
   #define ORCHESTRA_RULES { &eb_per_time_source, &broadcast_downward, &unicast_per_neighbor_rpl_storing, &default_common }
 #else
-  #define ORCHESTRA_RULES { &eb_per_time_source, &broadcast_per_neighbor, &unicast_per_neighbor_rpl_storing, &default_common }
+  #define ORCHESTRA_RULES { &eb_per_time_source, &broadcast_per_neighbor, &default_common }
+//  #define ORCHESTRA_RULES { &eb_per_time_source, &unicast_per_neighbor_rpl_storing, &default_common }
 #endif
 /* Example configuration for RPL non-storing mode: */
 /* #define ORCHESTRA_RULES { &eb_per_time_source, &unicast_per_neighbor_rpl_ns, &default_common } */

@@ -39,6 +39,10 @@
 
 #include "stdint.h"
 
+/* Change this to switch engines. Engine codes in uip-mcast6-engines.h */
+#define UIP_MCAST6_CONF_ENGINE	UIP_MCAST6_ENGINE_BMRF
+#define BMRF_CONF_MODE	BMRF_UNICAST_MODE
+
 //#define LOG_CONF_LEVEL_NULLNET LOG_LEVEL_INFO
 #define ENERGEST_CONF_ON 0      // set this to 0 to also not sned to the energest-sink
 #define ENERGEST_FREQ 100       // every x messages a message is sent to the energest sink
