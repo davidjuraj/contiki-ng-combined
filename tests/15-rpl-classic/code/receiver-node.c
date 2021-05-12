@@ -246,7 +246,19 @@ set_global_address(void)
   return &ipaddr;
 }
 /*---------------------------------------------------------------------------*/
-
+#if RPL_WITH_STORING
+uint8_t should_blink = 1;
+static void
+route_callback(int event, const uip_ipaddr_t *route, const uip_ipaddr_t *ipaddr, int num_routes)
+{
+  if(event == UIP_DS6_NOTIFICATION_DEFRT_ADD) {
+    should_blink = 0;
+  } else if(event == UIP_DS6_NOTIFICATION_DEFRT_RM) {
+    should_blink = 1;
+  }
+}
+#endif /* #if RPL_WITH_STORING */
+/*---------------------------------------------------------------------------*/
 PROCESS_THREAD(receiver_node_process, ev, data)
 {
   static struct etimer et;
@@ -278,14 +290,7 @@ PROCESS_THREAD(receiver_node_process, ev, data)
   while(1) {
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
     etimer_reset(&et);
-#if RPL_WITH_STORING
-    if(should_blink) {
-      leds_on(LEDS_ALL);
-      PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
-      etimer_reset(&et);
-      leds_off(LEDS_ALL);
-    }
-#endif /* #if RPL_WITH_STORING */
+
   }
   PROCESS_END();
 }
