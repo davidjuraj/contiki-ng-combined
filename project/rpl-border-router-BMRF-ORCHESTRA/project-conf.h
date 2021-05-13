@@ -61,7 +61,7 @@
 #endif
 
 #ifndef NBR_TABLE_CONF_MAX_NEIGHBORS
-#define NBR_TABLE_CONF_MAX_NEIGHBORS 15
+#define NBR_TABLE_CONF_MAX_NEIGHBORS 6
 #endif
 
 //#define LOG_CONF_LEVEL_MAC                         LOG_LEVEL_DBG
