@@ -40,7 +40,7 @@
 
 /* Handle 10 neighbors */
 #ifndef NBR_TABLE_CONF_MAX_NEIGHBORS
-#define NBR_TABLE_CONF_MAX_NEIGHBORS    10
+#define NBR_TABLE_CONF_MAX_NEIGHBORS    6
 #endif
 
 /* Handle 10 routes    */

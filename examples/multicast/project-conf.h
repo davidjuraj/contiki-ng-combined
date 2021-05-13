@@ -61,7 +61,7 @@
 #endif
 
 #ifndef NBR_TABLE_CONF_MAX_NEIGHBORS
-#define NBR_TABLE_CONF_MAX_NEIGHBORS 10
+#define NBR_TABLE_CONF_MAX_NEIGHBORS 6
 #endif
 
 #endif /* PROJECT_CONF_H_ */
