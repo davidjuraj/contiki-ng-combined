@@ -83,7 +83,7 @@ typedef unsigned int uip_stats_t;
 #define NETSTACK_MAX_ROUTE_ENTRIES   300
 #endif /* NETSTACK_MAX_ROUTE_ENTRIES */
 #ifndef NBR_TABLE_CONF_MAX_NEIGHBORS
-#define NBR_TABLE_CONF_MAX_NEIGHBORS 300
+#define NBR_TABLE_CONF_MAX_NEIGHBORS 6
 #endif /* NBR_TABLE_CONF_MAX_NEIGHBORS */
 
 /* configure queues */
