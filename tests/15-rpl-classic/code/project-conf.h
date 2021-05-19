@@ -43,11 +43,16 @@
 #define UIP_MCAST6_CONF_ENGINE	UIP_MCAST6_ENGINE_BMRF
 #define BMRF_CONF_MODE	BMRF_UNICAST_MODE
 
+#define NBR_TABLE_CONF_MAX_NEIGHBORS 6
+#define NETSTACK_MAX_ROUTE_ENTRIES   8
+#define UIP_MCAST6_ROUTE_CONF_ROUTES 1
+
+/* Get some extra RAM */
+#define LPM_CONF_MAX_PM             1
+
 //#define LOG_CONF_LEVEL_NULLNET LOG_LEVEL_INFO
 #define ENERGEST_CONF_ON 0      // set this to 0 to also not sned to the energest-sink
 #define ENERGEST_FREQ 100       // every x messages a message is sent to the energest sink
-
-#define BC 0 // Broadcast test or not
 
 #define IO_WIDTH 11
 

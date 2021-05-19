@@ -57,11 +57,11 @@
 
 /* Code/RAM footprint savings so that things will fit on our device */
 #ifndef NETSTACK_MAX_ROUTE_ENTRIES
-#define NETSTACK_MAX_ROUTE_ENTRIES   10
+#define NETSTACK_MAX_ROUTE_ENTRIES   5
 #endif
 
 #ifndef NBR_TABLE_CONF_MAX_NEIGHBORS
-#define NBR_TABLE_CONF_MAX_NEIGHBORS 6
+#define NBR_TABLE_CONF_MAX_NEIGHBORS 4
 #endif
 
 #endif /* PROJECT_CONF_H_ */
