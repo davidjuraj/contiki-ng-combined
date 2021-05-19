@@ -41,8 +41,12 @@
 
 /* Change this to switch engines. Engine codes in uip-mcast6-engines.h */
 #define UIP_MCAST6_CONF_ENGINE	UIP_MCAST6_ENGINE_BMRF
-#define BMRF_CONF_MODE	BMRF_UNICAST_MODE
 
+/* Change this to switch between unicast mode and broadcast mode*/
+//#define BMRF_CONF_MODE	BMRF_UNICAST_MODE
+#define BMRF_CONF_MODE	BMRF_BROADCAST_MODE
+
+/* Code/RAM footprint savings so that things will fit on our device*/
 #define NBR_TABLE_CONF_MAX_NEIGHBORS 6
 #define NETSTACK_MAX_ROUTE_ENTRIES   8
 #define UIP_MCAST6_ROUTE_CONF_ROUTES 1
