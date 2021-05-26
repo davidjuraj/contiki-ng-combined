@@ -4,6 +4,7 @@
 #include "stdint.h"
 #include "sys/rtimer.h"
 
+//#undef ZOUL_CONF_USE_CC1200_RADIO
 //#define ZOUL_CONF_USE_CC1200_RADIO 1
 #undef IEEE802154_CONF_DEFAULT_CHANNEL
 #define IEEE802154_CONF_DEFAULT_CHANNEL 17

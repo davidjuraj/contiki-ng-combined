@@ -75,4 +75,13 @@
 #define MCAST_CONF_MESSAGES 100
 #define MCAST_CONF_START_DELAY 240
 
+#define IO_WIDTH 11
+
+// UART pins are used for parallel communication, serial comm over UART overwrites some pins
+#define UART_CONF_ENABLE 0
+#define USB_SERIAL_CONF_ENABLE 0
+
+/* Get some extra RAM */
+#define LPM_CONF_MAX_PM             1
+
 #endif /* PROJECT_CONF_H_ */

@@ -120,7 +120,7 @@ uint16_t *radio_tsch_timeslot_timing(void);
 #if ZOUL_CONF_USE_CC1200_RADIO
 #define NETSTACK_CONF_RADIO                           cc1200_driver
 #define ANTENNA_SW_SELECT_DEF_CONF                    ANTENNA_SW_SELECT_SUBGHZ
-#define CC1200_CONF_USE_GPIO2                         0
+#define CC1200_CONF_USE_GPIO2                         1
 #define CC1200_CONF_USE_RX_WATCHDOG                   0
 
 #define CSMA_CONF_ACK_WAIT_TIME                       (RTIMER_SECOND / 200)
