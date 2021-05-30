@@ -45,6 +45,16 @@
 #include "contiki-net.h"
 #include "net/ipv6/multicast/uip-mcast6.h"
 
+#include "lib/random.h"
+#include "sys/ctimer.h"
+#include "sys/etimer.h"
+#include "net/ipv6/uip.h"
+#include "net/ipv6/uip-ds6.h"
+#include "net/ipv6/uip-debug.h"
+#include "project-conf.h"
+
+#include "simple-udp.h"
+
 #include "net/ipv6/multicast/bmrf.h"
 
 #include <string.h>
@@ -52,12 +62,15 @@
 #define DEBUG DEBUG_PRINT
 #include "net/ipv6/uip-debug.h"
 
+#include "dev/gpio.h"
+#include "dev/ioc.h"
+
 #define MCAST_SINK_UDP_PORT 3001 /* Host byte order */
 
 static struct uip_udp_conn *sink_conn;
 static uint16_t count;
 
-#define WAIT_END 50
+#define WAIT_END 10 //50
 #ifdef MCAST_CONF_START_DELAY
 #define START_DELAY MCAST_CONF_START_DELAY
 #else
@@ -65,7 +78,7 @@ static uint16_t count;
 #endif
 
 #if defined(MCAST_CONF_SEND_INTERVAL) && defined(MCAST_CONF_MESSAGES) && defined(MCAST_CONF_START_DELAY)
-#define WAIT_FOR_END ((MCAST_CONF_SEND_INTERVAL * MCAST_CONF_MESSAGES) + MCAST_CONF_START_DELAY + 163)
+#define WAIT_FOR_END ((MCAST_CONF_SEND_INTERVAL * MCAST_CONF_MESSAGES) + MCAST_CONF_START_DELAY + 10) //+163
 #else
 #define WAIT_FOR_END 160 + 65
 #endif
@@ -89,6 +102,73 @@ tcpip_handler(void)
   }
   return;
 }
+/*---------------------------------------------------------------------------*/
+// void
+// GPIOS_init(void)
+// {
+
+// 	  ioc_set_over(0, 6, IOC_OVERRIDE_OE);
+//     ioc_set_over(0, 7, IOC_OVERRIDE_OE);
+//     ioc_set_over(2, 0, IOC_OVERRIDE_OE);
+//     ioc_set_over(2, 1, IOC_OVERRIDE_OE);
+//     ioc_set_over(2, 2, IOC_OVERRIDE_OE);
+//     ioc_set_over(2, 3, IOC_OVERRIDE_OE);
+//     ioc_set_over(2, 4, IOC_OVERRIDE_OE);
+//     ioc_set_over(2, 5, IOC_OVERRIDE_OE);
+//     ioc_set_over(2, 6, IOC_OVERRIDE_OE);
+//     ioc_set_over(3, 0, IOC_OVERRIDE_OE);
+//     ioc_set_over(3, 1, IOC_OVERRIDE_OE);
+//     ioc_set_over(3, 2, IOC_OVERRIDE_OE);
+
+// 	  GPIO_SOFTWARE_CONTROL(GPIO_A_BASE,GPIO_PIN_MASK(6));
+//     GPIO_SOFTWARE_CONTROL(GPIO_A_BASE,GPIO_PIN_MASK(7));
+// 	  GPIO_SET_OUTPUT(GPIO_A_BASE,GPIO_PIN_MASK(6));		//GPIO PA6
+// 	  GPIO_SET_OUTPUT(GPIO_A_BASE,GPIO_PIN_MASK(7));		//GPIO PA7
+
+//     GPIO_SOFTWARE_CONTROL(GPIO_C_BASE,GPIO_PIN_MASK(0));		//GPIO PC0
+// 	  GPIO_SOFTWARE_CONTROL(GPIO_C_BASE,GPIO_PIN_MASK(1));		//GPIO PC1
+//     GPIO_SOFTWARE_CONTROL(GPIO_C_BASE,GPIO_PIN_MASK(2));		//GPIO PC2
+//     GPIO_SOFTWARE_CONTROL(GPIO_C_BASE,GPIO_PIN_MASK(3));		//GPIO PC3
+// 	  GPIO_SOFTWARE_CONTROL(GPIO_C_BASE,GPIO_PIN_MASK(4));		//GPIO PC4
+// 	  GPIO_SOFTWARE_CONTROL(GPIO_C_BASE,GPIO_PIN_MASK(5));		//GPIO PC5
+//     GPIO_SOFTWARE_CONTROL(GPIO_C_BASE,GPIO_PIN_MASK(6));		//GPIO PC6
+  
+//  	  GPIO_SET_OUTPUT(GPIO_C_BASE,GPIO_PIN_MASK(0));		//GPIO PC0
+// 	  GPIO_SET_OUTPUT(GPIO_C_BASE,GPIO_PIN_MASK(1));		//GPIO PC1
+//     GPIO_SET_OUTPUT(GPIO_C_BASE,GPIO_PIN_MASK(2));		//GPIO PC2
+//     GPIO_SET_OUTPUT(GPIO_C_BASE,GPIO_PIN_MASK(3));		//GPIO PC3
+// 	  GPIO_SET_OUTPUT(GPIO_C_BASE,GPIO_PIN_MASK(4));		//GPIO PC4
+// 	  GPIO_SET_OUTPUT(GPIO_C_BASE,GPIO_PIN_MASK(5));		//GPIO PC5
+//     GPIO_SET_OUTPUT(GPIO_C_BASE,GPIO_PIN_MASK(6));		//GPIO PC6
+
+//     GPIO_SET_INPUT(GPIO_D_BASE,GPIO_PIN_MASK(0));		//GPIO PD0
+//     GPIO_SET_INPUT(GPIO_D_BASE,GPIO_PIN_MASK(1));		//GPIO PD1
+// 	  GPIO_SET_INPUT(GPIO_D_BASE,GPIO_PIN_MASK(2));		//GPIO PD2
+
+// 	  GPIO_SET_OUTPUT(GPIO_D_BASE,GPIO_PIN_MASK(0));		//GPIO PD0
+//     GPIO_SET_OUTPUT(GPIO_D_BASE,GPIO_PIN_MASK(1));		//GPIO PD1
+// 	  GPIO_SET_OUTPUT(GPIO_D_BASE,GPIO_PIN_MASK(2));		//GPIO PD2
+
+// 	  GPIO_CLR_PIN(GPIO_A_BASE,GPIO_PIN_MASK(6));		//GPIO PA6
+// }
+// /*---------------------------------------------------------------------------*/
+// void
+// clear_GPIOS(void)
+// {
+// 	  GPIO_CLR_PIN(GPIO_A_BASE,GPIO_PIN_MASK(6));		//GPIO PA6
+	
+//  	  GPIO_CLR_PIN(GPIO_C_BASE,GPIO_PIN_MASK(0));		//GPIO PC0
+// 	  GPIO_CLR_PIN(GPIO_C_BASE,GPIO_PIN_MASK(1));		//GPIO PC1
+//   	GPIO_CLR_PIN(GPIO_C_BASE,GPIO_PIN_MASK(2));		//GPIO PC2
+//   	GPIO_CLR_PIN(GPIO_C_BASE,GPIO_PIN_MASK(3));		//GPIO PC3
+//   	GPIO_CLR_PIN(GPIO_C_BASE,GPIO_PIN_MASK(4));		//GPIO PC4
+// 	  GPIO_CLR_PIN(GPIO_C_BASE,GPIO_PIN_MASK(5));		//GPIO PC5
+//   	GPIO_CLR_PIN(GPIO_C_BASE,GPIO_PIN_MASK(6));		//GPIO PC6
+
+//   	GPIO_CLR_PIN(GPIO_D_BASE,GPIO_PIN_MASK(0));		//GPIO PD0
+//   	GPIO_CLR_PIN(GPIO_D_BASE,GPIO_PIN_MASK(1));		//GPIO PD1
+//   	GPIO_CLR_PIN(GPIO_D_BASE,GPIO_PIN_MASK(2));		//GPIO PD2
+// }
 /*---------------------------------------------------------------------------*/
 #if UIP_MCAST6_CONF_ENGINE != UIP_MCAST6_ENGINE_MPL
 static uip_ds6_maddr_t *
@@ -125,6 +205,8 @@ PROCESS_THREAD(mcast_sink_process, ev, data)
 {
 
   PROCESS_BEGIN();
+
+  // GPIOS_init();
 
   PRINTF("Multicast Engine: '%s'\n", UIP_MCAST6.name);
 

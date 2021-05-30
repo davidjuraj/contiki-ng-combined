@@ -40,7 +40,7 @@
 #ifndef PROJECT_CONF_H_
 #define PROJECT_CONF_H_
 
-
+#include "stdint.h"
 #include "net/ipv6/multicast/uip-mcast6-engines.h"
 
 /* Change this to switch engines. Engine codes in uip-mcast6-engines.h */
@@ -73,15 +73,24 @@
 
 #define MCAST_CONF_SEND_INTERVAL 3
 #define MCAST_CONF_MESSAGES 100
-#define MCAST_CONF_START_DELAY 240
+#define MCAST_CONF_START_DELAY 10 //240
 
 #define IO_WIDTH 11
 
 // UART pins are used for parallel communication, serial comm over UART overwrites some pins
-#define UART_CONF_ENABLE 0
-#define USB_SERIAL_CONF_ENABLE 0
+#define UART_CONF_ENABLE 1
+#define USB_SERIAL_CONF_ENABLE 1
 
 /* Get some extra RAM */
 #define LPM_CONF_MAX_PM             1
+
+/* Data structure of messages sent from sender
+ *
+ */
+struct testmsg {       
+	uint16_t  seqno;
+	uint16_t  timestamp_app;
+    uint16_t  timestamp_mac;
+};
 
 #endif /* PROJECT_CONF_H_ */

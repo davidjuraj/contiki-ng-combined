@@ -4,8 +4,8 @@
 #include "stdint.h"
 #include "sys/rtimer.h"
 
-//#undef ZOUL_CONF_USE_CC1200_RADIO
-//#define ZOUL_CONF_USE_CC1200_RADIO 1
+#undef ZOUL_CONF_USE_CC1200_RADIO
+#define ZOUL_CONF_USE_CC1200_RADIO 1
 #undef IEEE802154_CONF_DEFAULT_CHANNEL
 #define IEEE802154_CONF_DEFAULT_CHANNEL 17
 
@@ -16,7 +16,7 @@
 #ifdef UART_CONF_ENABLE
 #undef UART_CONF_ENABLE
 #endif
-#define UART_CONF_ENABLE 1
+#define UART_CONF_ENABLE 0
 
 #include "stdint.h"
 
