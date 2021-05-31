@@ -55,6 +55,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "dev/ioc.h"
+#include "os/dev/radio.h"
 
 /* Log configuration */
 #include "sys/log.h"
@@ -90,8 +91,8 @@ uint8_t   flag;
  */ 
 uint8_t power = 31;
 
-linkaddr_t sink_addr = {{ 0x00, 0x12, 0x4b, 0x00, 0x18, 0xe6, 0x9d, 0x4b }};
-
+//linkaddr_t sink_addr = {{ 0x00, 0x12, 0x4b, 0x00, 0x18, 0xe6, 0x9d, 0x4b }};  //DAVID´S SINK
+linkaddr_t sink_addr = {{ 0x00, 0x12, 0x4b, 0x00, 0x18, 0xe6, 0x9d, 0x98 }};  //VIKTOR´S SINK
 
 //static void send_packet(gpio_hal_pin_mask_t pin_mask);
 

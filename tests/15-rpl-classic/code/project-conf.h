@@ -33,8 +33,8 @@
 // #define TCPIP_CONF_ANNOTATE_TRANSMISSIONS 1 //hereeeeeeeeeeee comment
 //#define LOG_LEVEL_CONF_MAC LOG_LEVEL_DBG
 
-#undef ZOUL_CONF_USE_CC1200_RADIO 
-#define ZOUL_CONF_USE_CC1200_RADIO 1
+//#undef ZOUL_CONF_USE_CC1200_RADIO 
+//#define ZOUL_CONF_USE_CC1200_RADIO 1
 #undef IEEE802154_CONF_DEFAULT_CHANNEL
 #define IEEE802154_CONF_DEFAULT_CHANNEL 15
 
@@ -62,8 +62,8 @@
 #define IO_WIDTH 11
 
 // UART pins are used for parallel communication, serial comm over UART overwrites some pins
-#define UART_CONF_ENABLE 1
-#define USB_SERIAL_CONF_ENABLE 1
+#define UART_CONF_ENABLE 0
+#define USB_SERIAL_CONF_ENABLE 0
 
 //#define LOG_CONF_LEVEL_RPL LOG_LEVEL_DBG
 

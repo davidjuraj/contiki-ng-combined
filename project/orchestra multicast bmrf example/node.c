@@ -45,6 +45,19 @@
 #include "contiki-net.h"
 #include "net/ipv6/multicast/uip-mcast6.h"
 
+#include "net/ipv6/multicast/bmrf.h"
+
+#include <string.h>
+#include <inttypes.h>
+
+#define DEBUG DEBUG_PRINT
+#include "net/ipv6/uip-debug.h"
+
+#include "net/routing/routing.h"
+
+#include "lib/random.h"
+#include <math.h>
+
 #include "lib/random.h"
 #include "sys/ctimer.h"
 #include "sys/etimer.h"
@@ -54,13 +67,6 @@
 #include "project-conf.h"
 
 #include "simple-udp.h"
-
-#include "net/ipv6/multicast/bmrf.h"
-
-#include <string.h>
-
-#define DEBUG DEBUG_PRINT
-#include "net/ipv6/uip-debug.h"
 
 #include "dev/gpio.h"
 #include "dev/ioc.h"
