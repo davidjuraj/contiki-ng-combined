@@ -34,7 +34,7 @@
 #include "project-conf.h"
 #include "net/netstack.h"
 #include "net/nullnet/nullnet.h"
-#include "os/dev/radio.h"
+//#include "os/dev/radio.h"
 
 #include <stdio.h>
 #include <stdlib.h>
