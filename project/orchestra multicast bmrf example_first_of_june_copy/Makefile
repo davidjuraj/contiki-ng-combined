@@ -1,6 +1,8 @@
 CONTIKI_PROJECT = root node 
 all: $(CONTIKI_PROJECT)
 
+MAKEFLAGS += -j
+
 CONTIKI = ../..
 
 MODULES += os/net/ipv6/multicast

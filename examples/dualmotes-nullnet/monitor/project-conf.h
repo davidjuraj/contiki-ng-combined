@@ -16,7 +16,7 @@
 #ifdef UART_CONF_ENABLE
 #undef UART_CONF_ENABLE
 #endif
-#define UART_CONF_ENABLE 0
+#define UART_CONF_ENABLE 1
 
 #include "stdint.h"
 
