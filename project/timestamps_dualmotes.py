@@ -4,9 +4,9 @@ import pandas
 
 sender = 'de23'
 receiver = '9dc8'
-#putty_file = open("putty_broadcast1.txt", "r")
+# putty_file = open("putty_broadcast1.txt", "r")
 putty_file = open("putty_unicast1.txt", "r")
-#putty_file = open("putty_broadcast2.txt", "r")
+# putty_file = open("putty_broadcast2.txt", "r")
 lines = putty_file.readlines()
 lines = filter(lambda x: x.strip(), lines)  # deleting empty lines
 
@@ -25,9 +25,7 @@ for line in lines:
         line = line.split(',')
         received.append(line)
         if int(sent[-1][1]) == int(received[-1][1]) - 1 and int(sent[-1][5]) in range(int(received[-1][5]) - threshold,
-                                                                                      int(received[-1][
-                                                                                              5]) + threshold) and len(
-            received) > 1:
+                int(received[-1][5]) + threshold) and len(received) > 1:
             seqNo = int(sent[-1][1])
             # sender_app_time = int(sender_previous[6])
             sender_app_time = int(sent[-2][6])
@@ -57,7 +55,7 @@ plt.xlabel("Elapsed Time [s]")
 plt.ylabel("Observed latency [ms]")
 plt.title("Latency")
 # plt.plot([(x[1] - time_start) / (1000 * (2**15)) for x in latencies], [y[-1] for y in latencies])
-plt.plot([(x[1] - time_start) / (2 ** 15) for x in latencies], observed_latencies)
+plt.plot([(x[1] - time_start) / (2 ** 15) for x in latencies], observed_latencies, color='blue', marker='x', markersize=12)
 plt.show()
 
 # printf("%x%x,%"PRIu16",%"PRIu16",%"PRIu16",%"PRIu32",%"PRIu16",%"PRIu32",%"PRIu32",%"PRIu32",%lu\n\r",
@@ -74,4 +72,4 @@ lat_std = statistics.stdev(observed_latencies)
 print("\nMean: ", lat_mean, "\nVariance: ", lat_var, "\nStandard deviation: ", lat_std)
 
 df = pandas.DataFrame(observed_latencies, columns=['Column_Name'])
-print(df.describe())
+print(df.describe())  # statistics about the dataframe
