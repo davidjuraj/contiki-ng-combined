@@ -84,6 +84,9 @@
 /* Get some extra RAM */
 #define LPM_CONF_MAX_PM             1
 
+#define LOG_CONF_LEVEL_MAC LOG_LEVEL_DBG
+#define LOG_CONF_LEVEL_RPL LOG_LEVEL_DBG
+
 
 
 /* Data structure of messages sent from sender
