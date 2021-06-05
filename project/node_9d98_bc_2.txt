@@ -1,0 +1,572 @@
+sensornetworks@sensornetworks2019:~/contiki-ng-combined/project/orchestra multicast bmrf example_first_of_june_copy$ make TARGET=zoul BOARD=firefly MOTES=/dev/ttyUSB1 login
+Running serialdump without rlwrap support.
+Consider installing rlwarp in order to be able to use command history
+../../tools/serial-io/serialdump -b115200 /dev/ttyUSB1
+connecting to /dev/ttyUSB1 [OK]
+[INFO: TSCH      ] scanning on channel 26
+[INFO: TSCH      ] scanning on channel 25
+[INFO: TSCH      ] scanning on channel 15
+[INFO: TSCH      ] scanning on channel 25
+[INFO: TSCH      ] scanning on channel 15
+[INFO: TSCH      ] scanning on channel 20
+[INFO: TSCH      ] scanning on channel 25
+[INFO: TSCH      ] scanning on channel 26
+[INFO: TSCH      ] scanning on channel 26
+[INFO: TSCH      ] scanning on channel 15
+[INFO: TSCH      ] scanning on channel 26
+[INFO: TSCH      ] scan: received packet (35 bytes) on channel 26
+[INFO: TSCH      ] parse_eb: no schedule
+[INFO: TSCH Queue] update time source: (NULL LL addr) -> 0012.4b00.14b5.de4d
+[INFO: TSCH Sched] add_link sf=0 opt=Rx type=ADV_ONLY ts=77 ch=0 addr=ffff.ffff.ffff.ffff
+Add child and link 
+[INFO: TSCH Sched] add_link sf=1 opt=Rx type=NORMAL ts=14 ch=1 addr=ffff.ffff.ffff.ffff
+Added CHILD TSCH link -> timeslot for Rx/Tx at: 14 
+[INFO: TSCH      ] association done (1), sec 0, PAN ID abcd, asn-0.39ae, jp 1, timeslot id 0, hopping id 0, slotframe len 0 with 0 links, from 0012.4b00.14b5.de4d
+[INFO: TSCH-LOG  ] {asn 00.000039b0 link  1  21   0  5  1 ch  0} !dl-miss assoc 1804 656
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+[INFO: TSCH-LOG  ] {asn 00.000039f8 link  1  21   0 14  1 ch 25} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq   0, edr   5, dr  -5
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+[INFO: TSCH-LOG  ] {asn 00.00003aa0 link  1  21   0 14  1 ch 25} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq   0, edr  -1, dr   1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 65535
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,268)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[INFO: RPL       ] New instance detected (ID=30): Joining...
+[DBG : RPL       ] Neighbor state changed for fe80::212:4b00:18e6:9d87, state=1
+[INFO: RPL       ] Neighbor added to neighbor cache fe80::212:4b00:18e6:9d87, 0012.4b00.18e6.9d87
+[DBG : RPL       ] rpl_add_parent lladdr #0x20000bd4 fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Adding fe80::212:4b00:18e6:9d87 as a parent: succeeded
+[INFO: RPL       ] rpl_set_preferred_parent fe80::212:4b00:18e6:9d87 used to be NULL
+[INFO: TSCH Queue] update time source: 0012.4b00.14b5.de4d -> 0012.4b00.18e6.9d87
+[INFO: TSCH Sched] remove_link sf=0 opt=Rx type=ADV_ONLY ts=77 ch=0 addr=ffff.ffff.ffff.ffff
+[INFO: TSCH Sched] add_link sf=0 opt=Rx type=ADV_ONLY ts=135 ch=0 addr=ffff.ffff.ffff.ffff
+[INFO: TSCH Sched] remove_link sf=1 opt=Rx type=NORMAL ts=14 ch=1 addr=ffff.ffff.ffff.ffff
+Add child and link 
+[INFO: TSCH Sched] add_link sf=1 opt=Rx type=NORMAL ts=9 ch=1 addr=ffff.ffff.ffff.ffff
+Added CHILD TSCH link -> timeslot for Rx/Tx at: 9 
+[INFO: RPL       ] Joined DAG with instance ID 30, rank 481, DAG ID fd00::212:4b00:14b5:de4d
+[INFO: RPL       ] Scheduling DIO timer 437 ticks in future (Interval)
+[DBG : RPL       ] Adding default route through fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Scheduling DAO timer 629 ticks in the future
+[DBG : RPL       ] Scheduling DAO lifetime timer 127591 ticks in the future
+[INFO: RPL       ] Reset MRHOF
+[INFO: TSCH-LOG  ] {asn 00.00003c2f link  2  31   0  0  2 ch 25} bc-1-0 rx LL-9d87->LL-NULL, len  94, seq   0, edr   1
+[INFO: TSCH-LOG  ] {asn 00.00003c3c link-NULL} !skipped slot 1 0 1
+[INFO: TSCH-LOG  ] {asn 00.00003c3d link-NULL} !skipped slot 0 0 1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:14b5:de4d
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,128)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[INFO: RPL       ] rpl_set_prefix - prefix NON-NULL
+[DBG : RPL       ] Neighbor state changed for fe80::212:4b00:14b5:de4d, state=1
+[INFO: RPL       ] Neighbor added to neighbor cache fe80::212:4b00:14b5:de4d, 0012.4b00.14b5.de4d
+[INFO: RPL       ] Set dag fd00::212:4b00:14b5:de4d lifetime to 3145
+[DBG : RPL       ] rpl_add_parent lladdr #0x20000bc8 fe80::212:4b00:14b5:de4d
+[INFO: RPL       ] New candidate parent with rank 128: fe80::212:4b00:14b5:de4d
+[INFO: RPL       ] preferred DAG fd00::212:4b00:14b5:de4d, rank 481, min_rank 481, parent rank 128, link metric 192
+[INFO: RPL       ] rpl_set_preferred_parent fe80::212:4b00:14b5:de4d used to be fe80::212:4b00:18e6:9d87
+[INFO: TSCH Queue] update time source: 0012.4b00.18e6.9d87 -> 0012.4b00.14b5.de4d
+[INFO: TSCH Sched] remove_link sf=0 opt=Rx type=ADV_ONLY ts=135 ch=0 addr=ffff.ffff.ffff.ffff
+[INFO: TSCH Sched] add_link sf=0 opt=Rx type=ADV_ONLY ts=77 ch=0 addr=ffff.ffff.ffff.ffff
+[INFO: TSCH Sched] remove_link sf=1 opt=Rx type=NORMAL ts=9 ch=1 addr=ffff.ffff.ffff.ffff
+Add child and link 
+[INFO: TSCH Sched] add_link sf=1 opt=Rx type=NORMAL ts=14 ch=1 addr=ffff.ffff.ffff.ffff
+Added CHILD TSCH link -> timeslot for Rx/Tx at: 14 
+[DBG : RPL       ] Removing default route through fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Adding default route through fe80::212:4b00:14b5:de4d
+[INFO: RPL       ] Changed preferred parent, rank changed from 481 to 320
+[INFO: RPL       ] Sending a No-Path DAO with sequence number 241, lifetime 0, prefix fd00::212:4b00:18e6:9d98 to fe80::212:4b00:18e6:9d87 , parent fe80::212:4b00:18e6:9d87
+[DBG : TSCH Queue] packet is added put_index 0, packet #0x20001270
+[INFO: TSCH      ] send packet to 0012.4b00.18e6.9d87 with seqno 238, queue 1 1, len 21 74
+[DBG : RPL       ] DAO timer already scheduled
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 320 dioint 12, nbr count 2
+[DBG : RPL       ] RPL: nbr 4d   128,   192 =>   320 --  0  p (last tx 0 min ago)
+[DBG : RPL       ] RPL: nbr 87   268,   213 =>   481 --  0    (last tx 0 min ago)
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH-LOG  ] {asn 00.00003cab link  2  31   0  0  2 ch 25} bc-1-0 rx LL-de4d->LL-NULL, len  94, seq   0, edr   1
+[INFO: TSCH-LOG  ] {asn 00.00003cba link-NULL} !skipped slot 0 0 1
+[INFO: TSCH      ] packet sent to 0012.4b00.18e6.9d87, seqno 238, status 0, tx 1
+[DBG : RPL       ] rpl_link_callback triggering update
+[INFO: TSCH-LOG  ] {asn 00.00003cca link  2  31   0  0  2 ch 15} uc-1-0 tx LL-9d98->LL-9d87, len  74, seq 238, st 0  1
+[DBG : RPL       ] rpl_process_parent_event recalculate_ranks
+[DBG : RPL       ] rpl_process_parent_event recalculate_ranks
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000030], TTL 64, total 1
+[INFO: TSCH-LOG  ] {asn 00.00003d40 link  1  21   0 14  1 ch 25} drift 3 ppm (min/max delta seen: -5/1)
+[INFO: TSCH-LOG  ] {asn 00.00003d40 link  1  21   0 14  1 ch 25} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  17, edr   0, dr   0
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000031], TTL 64, total 2
+[INFO: TSCH-LOG  ] {asn 00.00003d55 link  1  21   0 14  1 ch 26} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  17, edr   0, dr   0
+[DBG : RPL       ] DIO Timer triggered
+[DBG : RPL       ] Sending prefix info in DIO for fd00::
+[INFO: RPL       ] Sending a multicast-DIO with rank 320
+[DBG : TSCH Queue] packet is added put_index 0, packet #0x20001270
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 238, queue 1 1, len 14 94
+[DBG : RPL       ] Scheduling DIO timer 87 ticks in future (sent)
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 320 dioint 12, nbr count 2
+[DBG : RPL       ] RPL: nbr 4d   128,   192 =>   320 --  0  p (last tx 0 min ago)
+[DBG : RPL       ] RPL: nbr 87   268,   191 =>   459 --  1    (last tx 0 min ago)
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 73, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00003da3 link  2  31   0  0  2 ch 25} bc-1-0 tx LL-9d98->LL-NULL, len  94, seq  73, st 0  1
+[DBG : RPL       ] DIO Timer triggered
+[DBG : RPL       ] DIO Timer interval doubled 13
+[INFO: RPL       ] Scheduling DIO timer 968 ticks in future (Interval)
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 320 dioint 13, nbr count 2
+[DBG : RPL       ] RPL: nbr 4d   128,   192 =>   320 --  0  p (last tx 0 min ago)
+[DBG : RPL       ] RPL: nbr 87   268,   191 =>   459 --  1    (last tx 0 min ago)
+[DBG : RPL       ] RPL: end of list
+[INFO: RPL       ] handle_dao_timer - sending DAO
+[INFO: RPL       ] Sending a DAO with sequence number 242, lifetime 30, prefix fd00::212:4b00:18e6:9d98 to fe80::212:4b00:14b5:de4d , parent fe80::212:4b00:14b5:de4d
+[DBG : TSCH Queue] packet is added put_index 0, packet #0x20001270
+[INFO: TSCH      ] send packet to 0012.4b00.14b5.de4d with seqno 239, queue 1 1, len 21 74
+[INFO: RPL       ] Sending a DAO with sequence number 242, lifetime 30, prefix ff1e::89:abcd to fe80::212:4b00:14b5:de4d , parent fe80::212:4b00:14b5:de4d
+[DBG : TSCH Queue] packet is added put_index 1, packet #0x20001284
+[INFO: TSCH      ] send packet to 0012.4b00.14b5.de4d with seqno 240, queue 2 2, len 21 74
+[INFO: RPL       ] probing 77 (urgent) last tx 0 min ago
+[DBG : RPL       ] Sending prefix info in DIO for fd00::
+[INFO: RPL       ] Sending unicast-DIO with rank 320 to fe80::212:4b00:14b5:de4d
+[DBG : TSCH Queue] packet is added put_index 2, packet #0x20001298
+[INFO: TSCH      ] send packet to 0012.4b00.14b5.de4d with seqno 241, queue 3 3, len 21 100
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 320 dioint 13, nbr count 2
+[DBG : RPL       ] RPL: nbr 4d   128,   192 =>   320 --  0  p (last tx 0 min ago)
+[DBG : RPL       ] RPL: nbr 87   268,   191 =>   459 --  1    (last tx 0 min ago)
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH      ] packet sent to 0012.4b00.14b5.de4d, seqno 239, status 0, tx 1
+[DBG : RPL       ] rpl_link_callback triggering update
+[INFO: TSCH      ] packet sent to 0012.4b00.14b5.de4d, seqno 240, status 0, tx 1
+[DBG : RPL       ] rpl_link_callback triggering update
+[INFO: TSCH      ] packet sent to 0012.4b00.14b5.de4d, seqno 241, status 0, tx 1
+[DBG : RPL       ] rpl_link_callback triggering update
+[INFO: TSCH-LOG  ] {asn 00.00003e3e link  2  31   0  0  2 ch 15} uc-1-0 tx LL-9d98->LL-de4d, len  74, seq 239, st 0  1, dr   1
+[INFO: TSCH-LOG  ] {asn 00.00003e3f link  2  31   1  1  2 ch 15} uc-1-0 tx LL-9d98->LL-de4d, len  74, seq 240, st 0  1, dr  -1
+[INFO: TSCH-LOG  ] {asn 00.00003e40 link  2  31   2  2  2 ch 15} uc-1-0 tx LL-9d98->LL-de4d, len 100, seq 241, st 0  1, dr   0
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000032], TTL 64, total 3
+[INFO: TSCH-LOG  ] {asn 00.00003e51 link  1  21   0 14  1 ch 26} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  18, edr  -1, dr   1
+[INFO: TSCH-LOG  ] {asn 00.00003e55 link  0 397   0 77  0 ch 25} bc-0-0 rx LL-de4d->LL-NULL, len  35, seq  18, edr   1, dr  -1
+[DBG : RPL       ] rpl_process_parent_event recalculate_ranks
+[DBG : RPL       ] RPL: Preferred parent update, rank changed from 320 to 283
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000033], TTL 64, total 4
+[INFO: TSCH-LOG  ] {asn 00.00003e90 link  1  21   0 14  1 ch 25} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  18, edr   0, dr   0
+[DBG : TSCH Queue] packet is added put_index 0, packet #0x20001270
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 74, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00003ea0 link  0 397   0 152  0 ch 15} bc-0-0 tx LL-9d98->LL-NULL, len  35, seq  74, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000034], TTL 64, total 5
+[INFO: TSCH-LOG  ] {asn 00.00003ee4 link  1  21   0 14  1 ch 25} drift 5 ppm (min/max delta seen: -5/1)
+[INFO: TSCH-LOG  ] {asn 00.00003ee4 link  1  21   0 14  1 ch 25} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  18, edr  -1, dr   1
+[INFO: RPL       ] probing 77 (urgent) last tx 0 min ago
+[DBG : RPL       ] Sending prefix info in DIO for fd00::
+[INFO: RPL       ] Sending unicast-DIO with rank 283 to fe80::212:4b00:14b5:de4d
+[DBG : TSCH Queue] packet is added put_index 3, packet #0x20001270
+[INFO: TSCH      ] send packet to 0012.4b00.14b5.de4d with seqno 242, queue 1 1, len 21 100
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 283 dioint 13, nbr count 2
+[DBG : RPL       ] RPL: nbr 4d   128,   155 =>   283 --  3  p (last tx 0 min ago)
+[DBG : RPL       ] RPL: nbr 87   268,   191 =>   459 --  1    (last tx 0 min ago)
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH      ] packet sent to 0012.4b00.14b5.de4d, seqno 242, status 0, tx 1
+[DBG : RPL       ] rpl_link_callback triggering update
+[INFO: TSCH-LOG  ] {asn 00.00003f36 link  2  31   0  0  2 ch 15} uc-1-0 tx LL-9d98->LL-de4d, len 100, seq 242, st 0  1, dr  -2
+[DBG : RPL       ] rpl_process_parent_event recalculate_ranks
+[DBG : RPL       ] RPL: Preferred parent update, rank changed from 283 to 280
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000035], TTL 64, total 6
+[INFO: TSCH-LOG  ] {asn 00.00004049 link  1  21   0 14  1 ch 26} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  18, edr  -1, dr   1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000036], TTL 64, total 7
+[INFO: TSCH-LOG  ] {asn 00.00004073 link  1  21   0 14  1 ch 15} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  18, edr   1, dr  -1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000037], TTL 64, total 8
+[INFO: TSCH-LOG  ] {asn 00.000040b2 link  1  21   0 14  1 ch 20} drift 1 ppm (min/max delta seen: -5/1)
+[INFO: TSCH-LOG  ] {asn 00.000040b2 link  1  21   0 14  1 ch 20} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  18, edr   0, dr   0
+[DBG : RPL       ] DIO Timer triggered
+[DBG : RPL       ] Sending prefix info in DIO for fd00::
+[INFO: RPL       ] Sending a multicast-DIO with rank 280
+[DBG : TSCH Queue] packet is added put_index 1, packet #0x20001270
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 242, queue 1 1, len 14 94
+[DBG : RPL       ] Scheduling DIO timer 80 ticks in future (sent)
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 280 dioint 13, nbr count 2
+[DBG : RPL       ] RPL: nbr 4d   128,   152 =>   280 --  4 fp (last tx 0 min ago)
+[DBG : RPL       ] RPL: nbr 87   268,   191 =>   459 --  1    (last tx 0 min ago)
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 75, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000040e8 link  2  31   0  0  2 ch 26} bc-1-0 tx LL-9d98->LL-NULL, len  94, seq  75, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000038], TTL 64, total 9
+[INFO: TSCH-LOG  ] {asn 00.00004106 link  1  21   0 14  1 ch 20} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  18, edr   0, dr   0
+[DBG : RPL       ] DIO Timer triggered
+[DBG : RPL       ] DIO Timer interval doubled 14
+[INFO: RPL       ] Scheduling DIO timer 1311 ticks in future (Interval)
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 280 dioint 14, nbr count 2
+[DBG : RPL       ] RPL: nbr 4d   128,   152 =>   280 --  4 fp (last tx 0 min ago)
+[DBG : RPL       ] RPL: nbr 87   268,   191 =>   459 --  1    (last tx 0 min ago)
+[DBG : RPL       ] RPL: end of list
+[DBG : TSCH Queue] packet is added put_index 1, packet #0x20001270
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000039], TTL 64, total 10
+[INFO: TSCH-LOG  ] {asn 00.000041ae link  1  21   0 14  1 ch 20} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  18, edr  -1, dr   1
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 76, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000041ba link  0 397   0 152  0 ch 26} bc-0-0 tx LL-9d98->LL-NULL, len  35, seq  76, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x0000003a], TTL 64, total 11
+[INFO: TSCH-LOG  ] {asn 00.0000426b link  1  21   0 14  1 ch 15} drift 1 ppm (min/max delta seen: -5/1)
+[INFO: TSCH-LOG  ] {asn 00.0000426b link  1  21   0 14  1 ch 15} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  18, edr   1, dr  -1
+[INFO: TSCH-LOG  ] {asn 00.000042fc link  0 397   0 77  0 ch 15} bc-0-0 rx LL-de4d->LL-NULL, len  35, seq  18, edr   1, dr  -1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x0000003b], TTL 64, total 12
+[INFO: TSCH-LOG  ] {asn 00.000044cc link  1  21   0 14  1 ch 25} drift 2 ppm (min/max delta seen: -5/1)
+[INFO: TSCH-LOG  ] {asn 00.000044cc link  1  21   0 14  1 ch 25} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  18, edr  -2, dr   2
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x0000003c], TTL 64, total 13
+[INFO: TSCH-LOG  ] {asn 00.000044f6 link  1  21   0 14  1 ch 20} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  18, edr   1, dr  -1
+[DBG : RPL       ] DIO Timer triggered
+[DBG : RPL       ] Sending prefix info in DIO for fd00::
+[INFO: RPL       ] Sending a multicast-DIO with rank 280
+[DBG : TSCH Queue] packet is added put_index 2, packet #0x20001270
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 242, queue 1 1, len 14 94
+[DBG : RPL       ] Scheduling DIO timer 786 ticks in future (sent)
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 280 dioint 14, nbr count 2
+[DBG : RPL       ] RPL: nbr 4d   128,   152 =>   280 --  4 fp (last tx 0 min ago)
+[DBG : RPL       ] RPL: nbr 87   268,   191 =>   459 --  1    (last tx 0 min ago)
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 77, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00004525 link  2  31   0  0  2 ch 20} bc-1-0 tx LL-9d98->LL-NULL, len  94, seq  77, st 0  1
+[DBG : TSCH Queue] packet is added put_index 2, packet #0x20001270
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 78, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00004661 link  0 397   0 152  0 ch 25} bc-0-0 tx LL-9d98->LL-NULL, len  35, seq  78, st 0  1
+[DBG : RPL       ] DIO Timer triggered
+[DBG : RPL       ] DIO Timer interval doubled 15
+[INFO: RPL       ] Scheduling DIO timer 2587 ticks in future (Interval)
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 280 dioint 15, nbr count 2
+[DBG : RPL       ] RPL: nbr 4d   128,   152 =>   280 --  4 fp (last tx 0 min ago)
+[DBG : RPL       ] RPL: nbr 87   268,   191 =>   459 --  1    (last tx 0 min ago)
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x0000003d], TTL 64, total 14
+[INFO: TSCH-LOG  ] {asn 00.00004796 link  1  21   0 14  1 ch 20} drift 1 ppm (min/max delta seen: -5/2)
+[INFO: TSCH-LOG  ] {asn 00.00004796 link  1  21   0 14  1 ch 20} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  18, edr   0, dr   0
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 20
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,264)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[INFO: RPL       ] rpl_set_prefix - prefix NON-NULL
+[INFO: RPL       ] Set dag fd00::212:4b00:14b5:de4d lifetime to 3145
+[INFO: RPL       ] preferred DAG fd00::212:4b00:14b5:de4d, rank 280, min_rank 280, parent rank 264, link metric 191
+[INFO: TSCH-LOG  ] {asn 00.0000482c link  2  31   0  0  2 ch 26} uc-1-0 rx LL-9d87->LL-9d98, len 100, seq  20, edr  -1
+[DBG : RPL       ] rpl_process_parent_event recalculate_ranks
+[INFO: TSCH-LOG  ] {asn 00.00004930 link  0 397   0 77  0 ch 15} drift 1 ppm (min/max delta seen: -5/2)
+[INFO: TSCH-LOG  ] {asn 00.00004930 link  0 397   0 77  0 ch 15} bc-0-0 rx LL-de4d->LL-NULL, len  35, seq  20, edr   1, dr  -1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x0000003e], TTL 64, total 15
+[INFO: TSCH-LOG  ] {asn 00.000049a3 link  1  21   0 14  1 ch 15} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  20, edr   0, dr   0
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x0000003f], TTL 64, total 16
+[INFO: TSCH-LOG  ] {asn 00.00004a8a link  1  21   0 14  1 ch 20} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  20, edr   0, dr   0
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000040], TTL 64, total 17
+[INFO: TSCH-LOG  ] {asn 00.00004bb0 link  1  21   0 14  1 ch 25} drift 1 ppm (min/max delta seen: -5/2)
+[INFO: TSCH-LOG  ] {asn 00.00004bb0 link  1  21   0 14  1 ch 25} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  20, edr  -1, dr   1
+[DBG : TSCH Queue] packet is added put_index 3, packet #0x20001270
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000041], TTL 64, total 18
+[INFO: TSCH-LOG  ] {asn 00.00004bef link  1  21   0 14  1 ch 15} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  20, edr   0, dr   0
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000042], TTL 64, total 19
+[INFO: TSCH-LOG  ] {asn 00.00004c2e link  1  21   0 14  1 ch 20} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  20, edr  -1, dr   1
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 79, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00004c95 link  0 397   0 152  0 ch 25} bc-0-0 tx LL-9d98->LL-NULL, len  35, seq  79, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000043], TTL 64, total 20
+[INFO: TSCH-LOG  ] {asn 00.00004d00 link  1  21   0 14  1 ch 25} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  20, edr   0, dr   0
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000044], TTL 64, total 21
+[INFO: TSCH-LOG  ] {asn 00.00004e26 link  1  21   0 14  1 ch 20} drift 2 ppm (min/max delta seen: -5/2)
+[INFO: TSCH-LOG  ] {asn 00.00004e26 link  1  21   0 14  1 ch 20} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  20, edr   0, dr   0
+[INFO: RPL       ] probing 135  last tx 0 min ago
+[DBG : RPL       ] Sending prefix info in DIO for fd00::
+[INFO: RPL       ] Sending unicast-DIO with rank 280 to fe80::212:4b00:18e6:9d87
+[DBG : TSCH Queue] packet is added put_index 0, packet #0x20001270
+[INFO: TSCH      ] send packet to 0012.4b00.18e6.9d87 with seqno 243, queue 1 1, len 21 100
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 280 dioint 15, nbr count 2
+[DBG : RPL       ] RPL: nbr 4d   128,   152 =>   280 --  4 fp (last tx 0 min ago)
+[DBG : RPL       ] RPL: nbr 87   264,   191 =>   455 --  1    (last tx 0 min ago)
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH-LOG  ] {asn 00.00004ef4 link  2  31   0  0  2 ch 26} uc-1-0 tx LL-9d98->LL-9d87, len 100, seq 243, st 2  1
+[INFO: TSCH      ] packet sent to 0012.4b00.18e6.9d87, seqno 243, status 0, tx 2
+[DBG : RPL       ] rpl_link_callback triggering update
+[INFO: TSCH-LOG  ] {asn 00.00004f32 link  2  31   0  0  2 ch 15} uc-1-0 tx LL-9d98->LL-9d87, len 100, seq 243, st 0  2
+[DBG : RPL       ] DIO Timer triggered
+[DBG : RPL       ] Sending prefix info in DIO for fd00::
+[INFO: RPL       ] Sending a multicast-DIO with rank 280
+[DBG : TSCH Queue] packet is added put_index 3, packet #0x20001270
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 243, queue 1 1, len 14 94
+[DBG : RPL       ] Scheduling DIO timer 1607 ticks in future (sent)
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 280 dioint 15, nbr count 2
+[DBG : RPL       ] RPL: nbr 4d   128,   152 =>   280 --  4 fp (last tx 0 min ago)
+[DBG : RPL       ] RPL: nbr 87   264,   207 =>   471 --  3    (last tx 0 min ago)
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH-LOG  ] {asn 00.00004f64 link  0 397   0 77  0 ch 15} bc-0-0 rx LL-de4d->LL-NULL, len  35, seq  20, edr   1, dr  -1
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 80, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00004f70 link  2  31   0  0  2 ch 26} bc-1-0 tx LL-9d98->LL-NULL, len  94, seq  80, st 0  1
+[DBG : RPL       ] rpl_process_parent_event recalculate_ranks
+[DBG : TSCH Queue] packet is added put_index 4, packet #0x20001270
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000045], TTL 64, total 22
+[INFO: TSCH-LOG  ] {asn 00.0000522b link  1  21   0 14  1 ch 15} drift 1 ppm (min/max delta seen: -5/2)
+[INFO: TSCH-LOG  ] {asn 00.0000522b link  1  21   0 14  1 ch 15} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  20, edr   0, dr   0
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 65535
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,264)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[INFO: RPL       ] rpl_set_prefix - prefix NON-NULL
+[INFO: RPL       ] Set dag fd00::212:4b00:14b5:de4d lifetime to 3145
+[WARN: RPL       ] Received consistent DIO
+[INFO: RPL       ] preferred DAG fd00::212:4b00:14b5:de4d, rank 280, min_rank 280, parent rank 264, link metric 207
+[INFO: TSCH-LOG  ] {asn 00.00005258 link  2  31   0  0  2 ch 26} bc-1-0 rx LL-9d87->LL-NULL, len  94, seq  20, edr   0
+[DBG : RPL       ] rpl_process_parent_event recalculate_ranks
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 81, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000052c9 link  0 397   0 152  0 ch 25} bc-0-0 tx LL-9d98->LL-NULL, len  35, seq  81, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000046], TTL 64, total 23
+[INFO: TSCH-LOG  ] {asn 00.000052fd link  1  21   0 14  1 ch 26} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  20, edr   0, dr   0
+[INFO: TSCH-LOG  ] {asn 00.0000540b link  0 397   0 77  0 ch 20} drift 2 ppm (min/max delta seen: -5/2)
+[INFO: TSCH-LOG  ] {asn 00.0000540b link  0 397   0 77  0 ch 20} bc-0-0 rx LL-de4d->LL-NULL, len  35, seq  20, edr  -1, dr   1
+[DBG : RPL       ] DIO Timer triggered
+[DBG : RPL       ] DIO Timer interval doubled 16
+[INFO: RPL       ] Scheduling DIO timer 5802 ticks in future (Interval)
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 280 dioint 16, nbr count 2
+[DBG : RPL       ] RPL: nbr 4d   128,   152 =>   280 --  4 fp (last tx 0 min ago)
+[DBG : RPL       ] RPL: nbr 87   264,   207 =>   471 --  3    (last tx 0 min ago)
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH-LOG  ] {asn 00.00005502 link  2  31   0  0  2 ch 15} !failed to parse frame 0 0
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000047], TTL 64, total 24
+[INFO: TSCH-LOG  ] {asn 00.0000555e link  1  21   0 14  1 ch 20} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr   1, dr  -1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000048], TTL 64, total 25
+[INFO: TSCH-LOG  ] {asn 00.00005573 link  1  21   0 14  1 ch 15} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr   0, dr   0
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000049], TTL 64, total 26
+[INFO: TSCH-LOG  ] {asn 00.00005684 link  1  21   0 14  1 ch 25} drift 2 ppm (min/max delta seen: -5/2)
+[INFO: TSCH-LOG  ] {asn 00.00005684 link  1  21   0 14  1 ch 25} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr   1, dr  -1
+[DBG : TSCH Queue] packet is added put_index 5, packet #0x20001270
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 82, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00005770 link  0 397   0 152  0 ch 15} bc-0-0 tx LL-9d98->LL-NULL, len  35, seq  82, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x0000004a], TTL 64, total 27
+[INFO: TSCH-LOG  ] {asn 00.00005a35 link  1  21   0 14  1 ch 26} drift 1 ppm (min/max delta seen: -5/2)
+[INFO: TSCH-LOG  ] {asn 00.00005a35 link  1  21   0 14  1 ch 26} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr  -1, dr   1
+[INFO: TSCH-LOG  ] {asn 00.00005a3f link  0 397   0 77  0 ch 20} bc-0-0 rx LL-de4d->LL-NULL, len  35, seq  21, edr   0, dr   0
+[DBG : TSCH Queue] packet is added put_index 6, packet #0x20001270
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 83, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00005c17 link  0 397   0 152  0 ch 20} bc-0-0 tx LL-9d98->LL-NULL, len  35, seq  83, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x0000004b], TTL 64, total 28
+[INFO: TSCH-LOG  ] {asn 00.00005c96 link  1  21   0 14  1 ch 20} drift 1 ppm (min/max delta seen: -5/2)
+[INFO: TSCH-LOG  ] {asn 00.00005c96 link  1  21   0 14  1 ch 20} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr   1, dr  -1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x0000004c], TTL 64, total 29
+[INFO: TSCH-LOG  ] {asn 00.00005d14 link  1  21   0 14  1 ch 25} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr   0, dr   0
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x0000004d], TTL 64, total 30
+[INFO: TSCH-LOG  ] {asn 00.00005d29 link  1  21   0 14  1 ch 26} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr   0, dr   0
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x0000004e], TTL 64, total 31
+[INFO: TSCH-LOG  ] {asn 00.00005e3a link  1  21   0 14  1 ch 20} drift 2 ppm (min/max delta seen: -5/2)
+[INFO: TSCH-LOG  ] {asn 00.00005e3a link  1  21   0 14  1 ch 20} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr  -1, dr   1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x0000004f], TTL 64, total 32
+[INFO: TSCH-LOG  ] {asn 00.00005eb8 link  1  21   0 14  1 ch 25} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr   1, dr  -1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000050], TTL 64, total 33
+[INFO: TSCH-LOG  ] {asn 00.00005ecd link  1  21   0 14  1 ch 26} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr  -2, dr   2
+[INFO: TSCH-LOG  ] {asn 00.00005ee6 link  0 397   0 77  0 ch 26} bc-0-0 rx LL-de4d->LL-NULL, len  35, seq  21, edr   1, dr  -1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000051], TTL 64, total 34
+[INFO: TSCH-LOG  ] {asn 00.00005f4b link  1  21   0 14  1 ch 15} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr   1, dr  -1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000052], TTL 64, total 35
+[INFO: TSCH-LOG  ] {asn 00.00005f8a link  1  21   0 14  1 ch 20} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr   0, dr   0
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000053], TTL 64, total 36
+[INFO: TSCH-LOG  ] {asn 00.0000605c link  1  21   0 14  1 ch 25} drift 2 ppm (min/max delta seen: -5/2)
+[INFO: TSCH-LOG  ] {asn 00.0000605c link  1  21   0 14  1 ch 25} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr  -1, dr   1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000054], TTL 64, total 37
+[INFO: TSCH-LOG  ] {asn 00.000060b0 link  1  21   0 14  1 ch 25} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr   0, dr   0
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000055], TTL 64, total 38
+[INFO: TSCH-LOG  ] {asn 00.000060ef link  1  21   0 14  1 ch 15} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr   0, dr   0
+[DBG : TSCH Queue] packet is added put_index 7, packet #0x20001270
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: RPL       ] probing 135  last tx 0 min ago
+[DBG : RPL       ] Sending prefix info in DIO for fd00::
+[INFO: RPL       ] Sending unicast-DIO with rank 280 to fe80::212:4b00:18e6:9d87
+[DBG : TSCH Queue] packet is added put_index 0, packet #0x20001284
+[INFO: TSCH      ] send packet to 0012.4b00.18e6.9d87 with seqno 244, queue 1 2, len 21 100
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 280 dioint 16, nbr count 2
+[DBG : RPL       ] RPL: nbr 4d   128,   152 =>   280 --  4 fp (last tx 1 min ago)
+[DBG : RPL       ] RPL: nbr 87   264,   207 =>   471 --  3    (last tx 0 min ago)
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH      ] packet sent to 0012.4b00.18e6.9d87, seqno 244, status 0, tx 1
+[DBG : RPL       ] rpl_link_callback triggering update
+[INFO: TSCH-LOG  ] {asn 00.000061f7 link  2  31   0  0  2 ch 25} uc-1-0 tx LL-9d98->LL-9d87, len 100, seq 244, st 0  1
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 84, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.0000624b link  0 397   0 152  0 ch 20} bc-0-0 tx LL-9d98->LL-NULL, len  35, seq  84, st 0  1
+[DBG : RPL       ] rpl_process_parent_event recalculate_ranks
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000056], TTL 64, total 39
+[INFO: TSCH-LOG  ] {asn 00.0000637a link  1  21   0 14  1 ch 20} drift 1 ppm (min/max delta seen: -5/2)
+[INFO: TSCH-LOG  ] {asn 00.0000637a link  1  21   0 14  1 ch 20} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr   1, dr  -1
+[INFO: TSCH-LOG  ] {asn 00.0000651a link  0 397   0 77  0 ch 26} drift 1 ppm (min/max delta seen: -5/2)
+[INFO: TSCH-LOG  ] {asn 00.0000651a link  0 397   0 77  0 ch 26} bc-0-0 rx LL-de4d->LL-NULL, len  35, seq  21, edr   0, dr   0
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000057], TTL 64, total 40
+[INFO: TSCH-LOG  ] {asn 00.0000659c link  1  21   0 14  1 ch 25} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr   0, dr   0
+[DBG : RPL       ] DIO Timer triggered
+[DBG : RPL       ] Sending prefix info in DIO for fd00::
+[INFO: RPL       ] Sending a multicast-DIO with rank 280
+[DBG : TSCH Queue] packet is added put_index 4, packet #0x20001270
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 244, queue 1 1, len 14 94
+[DBG : RPL       ] Scheduling DIO timer 2586 ticks in future (sent)
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 280 dioint 16, nbr count 2
+[DBG : RPL       ] RPL: nbr 4d   128,   152 =>   280 --  4 fp (last tx 1 min ago)
+[DBG : RPL       ] RPL: nbr 87   264,   199 =>   463 --  4 f  (last tx 0 min ago)
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000058], TTL 64, total 41
+[INFO: TSCH-LOG  ] {asn 00.00006605 link  1  21   0 14  1 ch 26} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr   0, dr   0
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 85, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00006615 link  2  31   0  0  2 ch 20} bc-1-0 tx LL-9d98->LL-NULL, len  94, seq  85, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000059], TTL 64, total 42
+[INFO: TSCH-LOG  ] {asn 00.000066ad link  1  21   0 14  1 ch 26} drift 1 ppm (min/max delta seen: -5/2)
+[INFO: TSCH-LOG  ] {asn 00.000066ad link  1  21   0 14  1 ch 26} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr  -1, dr   1
+[DBG : TSCH Queue] packet is added put_index 0, packet #0x20001270
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x0000005a], TTL 64, total 43
+[INFO: TSCH-LOG  ] {asn 00.000066c2 link  1  21   0 14  1 ch 20} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr   0, dr   0
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 86, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000066f2 link  0 397   0 152  0 ch 26} bc-0-0 tx LL-9d98->LL-NULL, len  35, seq  86, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x0000005b], TTL 64, total 44
+[INFO: TSCH-LOG  ] {asn 00.00006740 link  1  21   0 14  1 ch 25} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  21, edr   0, dr   0
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 22
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,263)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[INFO: RPL       ] rpl_set_prefix - prefix NON-NULL
+[INFO: RPL       ] Set dag fd00::212:4b00:14b5:de4d lifetime to 3145
+[INFO: RPL       ] preferred DAG fd00::212:4b00:14b5:de4d, rank 280, min_rank 280, parent rank 263, link metric 199
+[INFO: TSCH-LOG  ] {asn 00.000068bf link  2  31   0  0  2 ch 25} uc-1-0 rx LL-9d87->LL-9d98, len 100, seq  22, edr   0
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x0000005c], TTL 64, total 45
+[INFO: TSCH-LOG  ] {asn 00.000068e4 link  1  21   0 14  1 ch 25} drift 2 ppm (min/max delta seen: -5/2)
+[INFO: TSCH-LOG  ] {asn 00.000068e4 link  1  21   0 14  1 ch 25} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  22, edr   0, dr   0
+[DBG : RPL       ] rpl_process_parent_event recalculate_ranks
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x0000005d], TTL 64, total 46
+[INFO: TSCH-LOG  ] {asn 00.00006923 link  1  21   0 14  1 ch 15} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  22, edr   1, dr  -1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x0000005e], TTL 64, total 47
+[INFO: TSCH-LOG  ] {asn 00.00006962 link  1  21   0 14  1 ch 20} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  22, edr   0, dr   0
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x0000005f], TTL 64, total 48
+[INFO: TSCH-LOG  ] {asn 00.0000698c link  1  21   0 14  1 ch 25} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  22, edr  -1, dr   1
+[INFO: TSCH-LOG  ] {asn 00.000069c1 link  0 397   0 77  0 ch 25} bc-0-0 rx LL-de4d->LL-NULL, len  35, seq  22, edr   0, dr   0
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000060], TTL 64, total 49
+[INFO: TSCH-LOG  ] {asn 00.00006a73 link  1  21   0 14  1 ch 15} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  22, edr   1, dr  -1
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000061], TTL 64, total 50
+[INFO: TSCH-LOG  ] {asn 00.00006ac7 link  1  21   0 14  1 ch 15} drift 1 ppm (min/max delta seen: -5/2)
+[INFO: TSCH-LOG  ] {asn 00.00006ac7 link  1  21   0 14  1 ch 15} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  22, edr   0, dr   0
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000062], TTL 64, total 51
+[INFO: TSCH-LOG  ] {asn 00.00006bc3 link  1  21   0 14  1 ch 15} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  22, edr   0, dr   0
+[DBG : TSCH Queue] packet is added put_index 1, packet #0x20001270
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: TSCH      ] received from 0012.4b00.14b5.de4d with seqno 65535
+In: [0x00000063], TTL 64, total 52
+[INFO: TSCH-LOG  ] {asn 00.00006cd4 link  1  21   0 14  1 ch 25} drift 1 ppm (min/max delta seen: -5/2)
+[INFO: TSCH-LOG  ] {asn 00.00006cd4 link  1  21   0 14  1 ch 25} bc-1-0 rx LL-de4d->LL-NULL, len  32, seq  22, edr   0, dr   0
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 87, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00006d26 link  0 397   0 152  0 ch 26} bc-0-0 tx LL-9d98->LL-NULL, len  35, seq  87, st 0  1
+[DBG : RPL       ] DIO Timer triggered
+[DBG : RPL       ] DIO Timer interval doubled 17
+[INFO: RPL       ] Scheduling DIO timer 12317 ticks in future (Interval)
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 280 dioint 17, nbr count 2
+[DBG : RPL       ] RPL: nbr 4d   128,   152 =>   280 --  4 fp (last tx 1 min ago)
+[DBG : RPL       ] RPL: nbr 87   263,   199 =>   462 --  4 f  (last tx 0 min ago)
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH-LOG  ] {asn 00.00006ff5 link  0 397   0 77  0 ch 25} drift 1 ppm (min/max delta seen: -5/2)
+[INFO: TSCH-LOG  ] {asn 00.00006ff5 link  0 397   0 77  0 ch 25} bc-0-0 rx LL-de4d->LL-NULL, len  35, seq  22, edr   0, dr   0
+[DBG : TSCH Queue] packet is added put_index 2, packet #0x20001270
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 88, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000071cd link  0 397   0 152  0 ch 25} bc-0-0 tx LL-9d98->LL-NULL, len  35, seq  88, st 0  1
+[INFO: TSCH-LOG  ] {asn 00.00007629 link  0 397   0 77  0 ch 25} !failed to parse frame 0 0
+[DBG : TSCH Queue] packet is added put_index 3, packet #0x20001270
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 89, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00007801 link  0 397   0 152  0 ch 25} bc-0-0 tx LL-9d98->LL-NULL, len  35, seq  89, st 0  1
+[INFO: RPL       ] probing 77  last tx 2 min ago
+[DBG : RPL       ] Sending prefix info in DIO for fd00::
+[INFO: RPL       ] Sending unicast-DIO with rank 280 to fe80::212:4b00:14b5:de4d
+[DBG : TSCH Queue] packet is added put_index 4, packet #0x20001270
+[INFO: TSCH      ] send packet to 0012.4b00.14b5.de4d with seqno 245, queue 1 1, len 21 100
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 280 dioint 17, nbr count 2
+[DBG : RPL       ] RPL: nbr 4d   128,   152 =>   280 --  4 fp (last tx 2 min ago)
+[DBG : RPL       ] RPL: nbr 87   263,   199 =>   462 --  4 f  (last tx 0 min ago)
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH      ] packet sent to 0012.4b00.14b5.de4d, seqno 245, status 0, tx 1
+[DBG : RPL       ] rpl_link_callback triggering update
+[INFO: TSCH-LOG  ] {asn 00.0000783f link  2  31   0  0  2 ch 25} drift 1 ppm (min/max delta seen: -5/2)
+[INFO: TSCH-LOG  ] {asn 00.0000783f link  2  31   0  0  2 ch 25} uc-1-0 tx LL-9d98->LL-de4d, len 100, seq 245, st 0  1, dr   1
+[DBG : RPL       ] rpl_process_parent_event recalculate_ranks
+[DBG : RPL       ] RPL: Preferred parent update, rank changed from 280 to 277
+[INFO: TSCH-LOG  ] {asn 00.00007ad0 link  0 397   0 77  0 ch 15} drift 1 ppm (min/max delta seen: -5/2)
+[INFO: TSCH-LOG  ] {asn 00.00007ad0 link  0 397   0 77  0 ch 15} bc-0-0 rx LL-de4d->LL-NULL, len  35, seq  23, edr   0, dr   0
+[DBG : TSCH Queue] packet is added put_index 4, packet #0x20001270
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 90, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00007ca8 link  0 397   0 152  0 ch 15} bc-0-0 tx LL-9d98->LL-NULL, len  35, seq  90, st 0  1
+
