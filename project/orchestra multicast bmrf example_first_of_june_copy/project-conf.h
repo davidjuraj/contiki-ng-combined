@@ -47,8 +47,8 @@
 #define UIP_MCAST6_CONF_ENGINE	UIP_MCAST6_ENGINE_BMRF
 
 /* Change this to switch between unicast mode and broadcast mode*/
-#define BMRF_CONF_MODE	BMRF_UNICAST_MODE
-//#define BMRF_CONF_MODE	BMRF_BROADCAST_MODE
+//#define BMRF_CONF_MODE	BMRF_UNICAST_MODE
+#define BMRF_CONF_MODE	BMRF_BROADCAST_MODE
 //#define BMRF_CONF_MODE	BMRF_MIXED_MODE
 //#define BMRF_CONF_BROADCAST_THRESHOLD	1
 
@@ -78,8 +78,8 @@
 #define IO_WIDTH 11
 
 // UART pins are used for parallel communication, serial comm over UART overwrites some pins
-#define UART_CONF_ENABLE 0
-#define USB_SERIAL_CONF_ENABLE 0
+#define UART_CONF_ENABLE 1
+#define USB_SERIAL_CONF_ENABLE 1
 
 /* Get some extra RAM */
 #define LPM_CONF_MAX_PM             1
