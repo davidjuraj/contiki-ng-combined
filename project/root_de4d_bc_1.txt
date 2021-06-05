@@ -1,0 +1,680 @@
+Running serialdump without rlwrap support.
+Consider installing rlwarp in order to be able to use command history
+../../tools/serial-io/serialdump -b115200 /dev/ttyUSB1
+connecting to /dev/ttyUSB1 [OK]
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 3, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000001da link  0 397   0 77  0 ch 26} bc-0-0 tx LL-de4d->LL-NULL, len  35, seq   3, st 0  1
+[DBG : TSCH Queue] packet is added put_index 2, packet #0x200016a0
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 4, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00000367 link  0 397   0 77  0 ch 20} bc-0-0 tx LL-de4d->LL-NULL, len  35, seq   4, st 0  1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000000) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000001) 4 bytes
+[DBG : RPL       ] DIO Timer triggered
+[DBG : RPL       ] Sending prefix info in DIO for fd00::
+[INFO: RPL       ] Sending a multicast-DIO with rank 128
+[DBG : TSCH Queue] packet is added put_index 1, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 94
+[DBG : RPL       ] Scheduling DIO timer 216 ticks in future (sent)
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 128 dioint 13, nbr count 0
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 5, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.0000043d link  2  31   0  0  2 ch 20} bc-1-0 tx LL-de4d->LL-NULL, len  94, seq   5, st 0  1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000002) 4 bytes
+[DBG : RPL       ] DIO Timer triggered
+[DBG : RPL       ] DIO Timer interval doubled 14
+[INFO: RPL       ] Scheduling DIO timer 1377 ticks in future (Interval)
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 128 dioint 14, nbr count 0
+[DBG : RPL       ] RPL: end of list
+[DBG : TSCH Queue] packet is added put_index 3, packet #0x200016a0
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000003) 4 bytes
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 6, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00000681 link  0 397   0 77  0 ch 25} bc-0-0 tx LL-de4d->LL-NULL, len  35, seq   6, st 0  1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000004) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000005) 4 bytes
+[DBG : RPL       ] DIO Timer triggered
+[DBG : RPL       ] Sending prefix info in DIO for fd00::
+[INFO: RPL       ] Sending a multicast-DIO with rank 128
+[DBG : TSCH Queue] packet is added put_index 2, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 94
+[DBG : RPL       ] Scheduling DIO timer 720 ticks in future (sent)
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 128 dioint 14, nbr count 0
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 7, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00000915 link  2  31   0  0  2 ch 20} bc-1-0 tx LL-de4d->LL-NULL, len  94, seq   7, st 0  1
+[DBG : TSCH Queue] packet is added put_index 4, packet #0x200016a0
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000006) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000007) 4 bytes
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 8, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00000b28 link  0 397   0 77  0 ch 15} bc-0-0 tx LL-de4d->LL-NULL, len  35, seq   8, st 0  1
+[DBG : RPL       ] DIO Timer triggered
+[DBG : RPL       ] DIO Timer interval doubled 15
+[INFO: RPL       ] Scheduling DIO timer 3217 ticks in future (Interval)
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 128 dioint 15, nbr count 0
+[DBG : RPL       ] RPL: end of list
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000008) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000009) 4 bytes
+[DBG : TSCH Queue] packet is added put_index 5, packet #0x200016a0
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000000a) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000000b) 4 bytes
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 9, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.0000115c link  0 397   0 77  0 ch 15} bc-0-0 tx LL-de4d->LL-NULL, len  35, seq   9, st 0  1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000000c) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000000d) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000000e) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000000f) 4 bytes
+[DBG : RPL       ] DIO Timer triggered
+[DBG : RPL       ] Sending prefix info in DIO for fd00::
+[INFO: RPL       ] Sending a multicast-DIO with rank 128
+[DBG : TSCH Queue] packet is added put_index 3, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 94
+[DBG : RPL       ] Scheduling DIO timer 977 ticks in future (sent)
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 128 dioint 15, nbr count 0
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 10, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00001512 link  2  31   0  0  2 ch 15} bc-1-0 tx LL-de4d->LL-NULL, len  94, seq  10, st 0  1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000010) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000011) 4 bytes
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d98
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,256)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[DBG : RPL       ] Neighbor state changed for fe80::212:4b00:18e6:9d98, state=1
+[INFO: RPL       ] Neighbor added to neighbor cache fe80::212:4b00:18e6:9d98, 0012.4b00.18e6.9d98
+[INFO: TSCH-LOG  ] {asn 00.0000160a link  2  31   0  0  2 ch 15} bc-1-0 rx LL-9d98->LL-NULL, len  94, seq   0, edr   2
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000012) 4 bytes
+[DBG : TSCH Queue] packet is added put_index 6, packet #0x200016a0
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000013) 4 bytes
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 150
+[INFO: RPL       ] Received a DAO from fe80::212:4b00:18e6:9d98
+[DBG : RPL       ] Received a (unicast) DAO with sequence number 241 from fe80::212:4b00:18e6:9d98
+[INFO: RPL       ] DAO lifetime: 30, prefix length: 128 prefix: fd00::212:4b00:18e6:9d98
+[INFO: RPL       ] Adding DAO route
+Add child and link 
+[INFO: TSCH Sched] add_link sf=1 opt=Rx type=NORMAL ts=5 ch=1 addr=ffff.ffff.ffff.ffff
+Added CHILD TSCH link -> timeslot for Rx/Tx at: 5 
+[INFO: RPL       ] Added a route to fd00::212:4b00:18e6:9d98/128 via fe80::212:4b00:18e6:9d98
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 151
+[INFO: RPL       ] Received a DAO from fe80::212:4b00:18e6:9d98
+[DBG : RPL       ] Received a (unicast) DAO with sequence number 241 from fe80::212:4b00:18e6:9d98
+[INFO: RPL       ] DAO lifetime: 30, prefix length: 128 prefix: ff1e::89:abcd
+[INFO: TSCH-LOG  ] {asn 00.00001702 link  2  31   0  0  2 ch 15} uc-1-0 rx LL-9d98->LL-de4d, len  74, seq 150, edr   1
+[INFO: TSCH-LOG  ] {asn 00.00001703 link  2  31   1  1  2 ch 15} uc-1-0 rx LL-9d98->LL-de4d, len  74, seq 151, edr   0
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 152
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d98
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,256)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[INFO: TSCH-LOG  ] {asn 00.0000177e link  2  31   0  0  2 ch 15} uc-1-0 rx LL-9d98->LL-de4d, len 100, seq 152, edr   0
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 11, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00001790 link  0 397   0 77  0 ch 15} bc-0-0 tx LL-de4d->LL-NULL, len  35, seq  11, st 0  1
+[DBG : RPL       ] DIO Timer triggered
+[DBG : RPL       ] DIO Timer interval doubled 16
+[INFO: RPL       ] Scheduling DIO timer 5533 ticks in future (Interval)
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 128 dioint 16, nbr count 1
+[DBG : RPL       ] RPL: end of list
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 128 dioint 16, nbr count 1
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 153
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d98
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,256)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[INFO: TSCH-LOG  ] {asn 00.00001857 link  2  31   0  0  2 ch 25} uc-1-0 rx LL-9d98->LL-de4d, len 100, seq 153, edr   0
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000014) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 4, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 12, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.0000186b link  1  21   0 14  1 ch 15} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  12, st 0  1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000015) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 5, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 13, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000018aa link  1  21   0 14  1 ch 20} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  13, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d98
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,256)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[INFO: TSCH-LOG  ] {asn 00.0000198d link  2  31   0  0  2 ch 20} bc-1-0 rx LL-9d98->LL-NULL, len  94, seq 153, edr   1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 65535
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,384)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[DBG : RPL       ] Neighbor state changed for fe80::212:4b00:18e6:9d87, state=1
+[INFO: RPL       ] Neighbor added to neighbor cache fe80::212:4b00:18e6:9d87, 0012.4b00.18e6.9d87
+[INFO: TSCH-LOG  ] {asn 00.00001ae2 link  2  31   0  0  2 ch 15} bc-1-0 rx LL-9d87->LL-NULL, len  94, seq 153, edr  -1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000016) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 6, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 14, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00001b20 link  1  21   0 14  1 ch 25} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  14, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 154
+[INFO: RPL       ] Received a DAO from fe80::212:4b00:18e6:9d98
+[DBG : RPL       ] Received a (unicast) DAO with sequence number 242 from fe80::212:4b00:18e6:9d98
+[INFO: RPL       ] DAO lifetime: 30, prefix length: 128 prefix: fd00::212:4b00:18e6:9d87
+[INFO: RPL       ] Adding DAO route
+[INFO: RPL       ] Added a route to fd00::212:4b00:18e6:9d87/128 via fe80::212:4b00:18e6:9d98
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 155
+[INFO: RPL       ] Received a DAO from fe80::212:4b00:18e6:9d98
+[DBG : RPL       ] Received a (unicast) DAO with sequence number 0 from fe80::212:4b00:18e6:9d98
+[INFO: RPL       ] DAO lifetime: 30, prefix length: 128 prefix: ff1e::89:abcd
+[INFO: TSCH-LOG  ] {asn 00.00001b5e link  2  31   0  0  2 ch 15} uc-1-0 rx LL-9d98->LL-de4d, len  74, seq 154, edr   1
+[INFO: TSCH-LOG  ] {asn 00.00001b5f link  2  31   1  1  2 ch 15} uc-1-0 rx LL-9d98->LL-de4d, len  74, seq 155, edr   1
+[DBG : TSCH Queue] packet is added put_index 7, packet #0x200016a0
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 15, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00001c37 link  0 397   0 77  0 ch 20} bc-0-0 tx LL-de4d->LL-NULL, len  35, seq  15, st 0  1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000017) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 7, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 16, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00001d42 link  1  21   0 14  1 ch 20} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  16, st 0  1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000018) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 0, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 17, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00001d57 link  1  21   0 14  1 ch 15} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  17, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: TSCH-LOG  ] {asn 00.00001d78 link  1  21   0  5  1 ch 25} bc-1-0 rx LL-9d98->LL-NULL, len  41, seq 159, edr   2
+[INFO: TSCH-LOG  ] {asn 00.00001d8c link  2  31   0  0  2 ch 26} !failed to parse frame 0 0
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d98
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,266)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[INFO: TSCH-LOG  ] {asn 00.00001f9b link  2  31   0  0  2 ch 25} bc-1-0 rx LL-9d98->LL-NULL, len  94, seq 160, edr   2
+[DBG : TSCH Queue] packet is added put_index 0, packet #0x200016a0
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 18, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000020de link  0 397   0 77  0 ch 26} bc-0-0 tx LL-de4d->LL-NULL, len  35, seq  18, st 0  1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000019) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 1, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 19, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00002219 link  1  21   0 14  1 ch 26} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  19, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: TSCH-LOG  ] {asn 00.00002225 link  1  21   0  5  1 ch 26} bc-1-0 rx LL-9d98->LL-NULL, len  41, seq 160, edr   1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000001a) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 2, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 20, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00002282 link  1  21   0 14  1 ch 20} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  20, st 0  1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000001b) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 3, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 21, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00002297 link  1  21   0 14  1 ch 15} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  21, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: TSCH-LOG  ] {asn 00.000022a3 link  1  21   0  5  1 ch 15} bc-1-0 rx LL-9d98->LL-NULL, len  41, seq 160, edr   0
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: TSCH-LOG  ] {asn 00.000022b8 link  1  21   0  5  1 ch 25} bc-1-0 rx LL-9d98->LL-NULL, len  41, seq 160, edr   1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 65535
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,394)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[INFO: TSCH-LOG  ] {asn 00.0000233d link  2  31   0  0  2 ch 20} bc-1-0 rx LL-9d87->LL-NULL, len  94, seq 160, edr   1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000001c) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 4, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 22, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000023a8 link  1  21   0 14  1 ch 25} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  22, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: TSCH-LOG  ] {asn 00.000023b4 link  1  21   0  5  1 ch 25} bc-1-0 rx LL-9d98->LL-NULL, len  41, seq 160, edr   1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000001d) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 5, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 23, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000024b9 link  1  21   0 14  1 ch 26} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  23, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: TSCH-LOG  ] {asn 00.000024c5 link  1  21   0  5  1 ch 26} bc-1-0 rx LL-9d98->LL-NULL, len  41, seq 160, edr   1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000001e) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 6, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 24, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00002522 link  1  21   0 14  1 ch 20} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  24, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: TSCH-LOG  ] {asn 00.0000252e link  1  21   0  5  1 ch 20} bc-1-0 rx LL-9d98->LL-NULL, len  41, seq 160, edr   0
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000001f) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 7, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 25, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000025b5 link  1  21   0 14  1 ch 26} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  25, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: TSCH-LOG  ] {asn 00.000025c1 link  1  21   0  5  1 ch 26} bc-1-0 rx LL-9d98->LL-NULL, len  41, seq 160, edr  -1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000020) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 0, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 26, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000025df link  1  21   0 14  1 ch 15} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  26, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: TSCH-LOG  ] {asn 00.000025eb link  1  21   0  5  1 ch 15} bc-1-0 rx LL-9d98->LL-NULL, len  41, seq 160, edr   0
+[DBG : TSCH Queue] packet is added put_index 1, packet #0x200016a0
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000021) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 1, packet #0x200016b4
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 2, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 28, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000026db link  1  21   0 14  1 ch 15} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  28, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: TSCH-LOG  ] {asn 00.000026e7 link  1  21   0  5  1 ch 15} bc-1-0 rx LL-9d98->LL-NULL, len  41, seq 160, edr   0
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 27, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00002712 link  0 397   0 77  0 ch 26} bc-0-0 tx LL-de4d->LL-NULL, len  35, seq  27, st 0  1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000022) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 2, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 29, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.0000287f link  1  21   0 14  1 ch 15} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  29, st 0  1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000023) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 3, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: TSCH-LOG  ] {asn 00.0000288b link  1  21   0  5  1 ch 15} bc-1-0 rx LL-9d98->LL-NULL, len  41, seq 156, edr   0
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 30, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00002894 link  1  21   0 14  1 ch 25} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  30, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: TSCH-LOG  ] {asn 00.000028a0 link  1  21   0  5  1 ch 25} bc-1-0 rx LL-9d98->LL-NULL, len  41, seq 156, edr   2
+[DBG : RPL       ] DIO Timer triggered
+[DBG : RPL       ] Sending prefix info in DIO for fd00::
+[INFO: RPL       ] Sending a multicast-DIO with rank 128
+[DBG : TSCH Queue] packet is added put_index 4, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 94
+[DBG : RPL       ] Scheduling DIO timer 2855 ticks in future (sent)
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 128 dioint 16, nbr count 2
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 31, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.0000290d link  2  31   0  0  2 ch 20} bc-1-0 tx LL-de4d->LL-NULL, len  94, seq  31, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 161
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,394)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[INFO: TSCH-LOG  ] {asn 00.000029c7 link  2  31   0  0  2 ch 25} uc-1-0 rx LL-9d87->LL-de4d, len 100, seq 161, edr   1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d98
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,266)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[INFO: TSCH-LOG  ] {asn 00.00002a05 link  2  31   0  0  2 ch 20} bc-1-0 rx LL-9d98->LL-NULL, len  94, seq 161, edr   1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 157
+[INFO: RPL       ] Received a DAO from fe80::212:4b00:18e6:9d98
+[DBG : RPL       ] Received a (unicast) DAO with sequence number 243 from fe80::212:4b00:18e6:9d98
+[INFO: RPL       ] DAO lifetime: 30, prefix length: 128 prefix: fd00::212:4b00:18e6:9d98
+[INFO: RPL       ] Adding DAO route
+[DBG : RPL       ] Updating single hop route for fd00::212:4b00:18e6:9d98[DBG : RPL       ]  -> fe80::212:4b00:18e6:9d98[DBG : RPL       ]  to fe80::212:4b00:18e6:9d98
+[INFO: RPL       ] Added a route to fd00::212:4b00:18e6:9d98/128 via fe80::212:4b00:18e6:9d98
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 158
+[INFO: RPL       ] Received a DAO from fe80::212:4b00:18e6:9d98
+[DBG : RPL       ] Received a (unicast) DAO with sequence number 243 from fe80::212:4b00:18e6:9d98
+[INFO: RPL       ] DAO lifetime: 30, prefix length: 128 prefix: ff1e::89:abcd
+[INFO: TSCH-LOG  ] {asn 00.00002aa0 link  2  31   0  0  2 ch 26} uc-1-0 rx LL-9d98->LL-de4d, len  74, seq 157, edr   1
+[INFO: TSCH-LOG  ] {asn 00.00002aa1 link  2  31   1  1  2 ch 26} uc-1-0 rx LL-9d98->LL-de4d, len  74, seq 158, edr   0
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 162
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,394)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[INFO: TSCH-LOG  ] {asn 00.00002ade link  2  31   0  0  2 ch 15} uc-1-0 rx LL-9d87->LL-de4d, len 100, seq 162, edr   0
+[DBG : TSCH Queue] packet is added put_index 2, packet #0x200016a0
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 163
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,394)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[INFO: TSCH-LOG  ] {asn 00.00002b98 link  2  31   0  0  2 ch 26} uc-1-0 rx LL-9d87->LL-de4d, len 100, seq 163, edr   0
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 32, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00002bb9 link  0 397   0 77  0 ch 25} bc-0-0 tx LL-de4d->LL-NULL, len  35, seq  32, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 159
+[INFO: RPL       ] Received a DAO from fe80::212:4b00:18e6:9d98
+[DBG : RPL       ] Received a (unicast) DAO with sequence number 244 from fe80::212:4b00:18e6:9d98
+[INFO: RPL       ] DAO lifetime: 0, prefix length: 128 prefix: fd00::212:4b00:18e6:9d87
+[INFO: RPL       ] No-Path DAO received
+[DBG : RPL       ] Setting expiration timer for prefix fd00::212:4b00:18e6:9d87
+[INFO: TSCH-LOG  ] {asn 00.00002bd6 link  2  31   0  0  2 ch 15} uc-1-0 rx LL-9d98->LL-de4d, len  74, seq 159, edr   0
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 165
+[INFO: RPL       ] Received a DAO from fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Received a (unicast) DAO with sequence number 243 from fe80::212:4b00:18e6:9d87
+[INFO: RPL       ] DAO lifetime: 30, prefix length: 128 prefix: fd00::212:4b00:18e6:9d87
+[INFO: RPL       ] Adding DAO route
+[DBG : RPL       ] Updating single hop route for fd00::212:4b00:18e6:9d87[DBG : RPL       ]  -> fe80::212:4b00:18e6:9d98[DBG : RPL       ]  to fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Route modified! Try purging current single-hop LLaddr from BMRF routing tables.
+[INFO: RPL       ] Purge multicast route on address fe80::212:4b00:18e6:9d98 with corresponding LL addr 0012.4b00.18e6.9d98
+Add child and link 
+[INFO: TSCH Sched] add_link sf=1 opt=Rx type=NORMAL ts=9 ch=1 addr=ffff.ffff.ffff.ffff
+Added CHILD TSCH link -> timeslot for Rx/Tx at: 9 
+[INFO: RPL       ] Added a route to fd00::212:4b00:18e6:9d87/128 via fe80::212:4b00:18e6:9d87
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 166
+[INFO: RPL       ] Received a DAO from fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Received a (unicast) DAO with sequence number 243 from fe80::212:4b00:18e6:9d87
+[INFO: RPL       ] DAO lifetime: 30, prefix length: 128 prefix: ff1e::89:abcd
+[INFO: TSCH-LOG  ] {asn 00.00002c52 link  2  31   0  0  2 ch 15} uc-1-0 rx LL-9d87->LL-de4d, len  74, seq 165, edr  -1
+[INFO: TSCH-LOG  ] {asn 00.00002c53 link  2  31   1  1  2 ch 15} uc-1-0 rx LL-9d87->LL-de4d, len  74, seq 166, edr   1
+[INFO: TSCH-LOG  ] {asn 00.00002c5b link-NULL} !skipped slot 0 0 1
+[INFO: RPL       ] Purged multicast route to ff1e::89:abcdon LL address 0012.4b00.18e6.9d98
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 65535
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,278)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[INFO: TSCH-LOG  ] {asn 00.00002ced link  2  31   0  0  2 ch 20} bc-1-0 rx LL-9d87->LL-NULL, len  94, seq 166, edr   0
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000024) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000025) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000026) 4 bytes
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 128 dioint 16, nbr count 2
+[DBG : RPL       ] RPL: end of list
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000027) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000028) 4 bytes
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 65535
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,278)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[INFO: TSCH-LOG  ] {asn 00.00002fd5 link  2  31   0  0  2 ch 20} bc-1-0 rx LL-9d87->LL-NULL, len  94, seq 166, edr   0
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000029) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000002a) 4 bytes
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 167
+[INFO: TSCH-LOG  ] {asn 00.0000310b link  2  31   0  0  2 ch 25} uc-1-0 rx LL-9d87->LL-de4d, len  21, seq 167, edr   0
+[DBG : TSCH Queue] packet is added put_index 3, packet #0x200016a0
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[DBG : RPL       ] DIO Timer triggered
+[DBG : RPL       ] DIO Timer interval doubled 17
+[INFO: RPL       ] Scheduling DIO timer 10462 ticks in future (Interval)
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 128 dioint 17, nbr count 2
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 33, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000031ed link  0 397   0 77  0 ch 25} bc-0-0 tx LL-de4d->LL-NULL, len  35, seq  33, st 0  1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000002b) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000002c) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000002d) 4 bytes
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 65535
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,275)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[INFO: TSCH-LOG  ] {asn 00.0000348e link  2  31   0  0  2 ch 15} bc-1-0 rx LL-9d87->LL-NULL, len  94, seq 167, edr   0
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000002e) 4 bytes
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 168
+[INFO: TSCH-LOG  ] {asn 00.00003640 link  2  31   0  0  2 ch 26} uc-1-0 rx LL-9d87->LL-de4d, len  21, seq 168, edr   0
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000002f) 4 bytes
+[DBG : TSCH Queue] packet is added put_index 4, packet #0x200016a0
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000030) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000031) 4 bytes
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 34, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00003821 link  0 397   0 77  0 ch 25} bc-0-0 tx LL-de4d->LL-NULL, len  35, seq  34, st 0  1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000032) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000033) 4 bytes
+[DBG : TSCH Queue] packet is added put_index 5, packet #0x200016a0
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 169
+[INFO: TSCH-LOG  ] {asn 00.00003cab link  2  31   0  0  2 ch 25} uc-1-0 rx LL-9d87->LL-de4d, len  21, seq 169, edr  -1
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 35, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00003cc8 link  0 397   0 77  0 ch 15} bc-0-0 tx LL-de4d->LL-NULL, len  35, seq  35, st 0  1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000034) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000035) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000036) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000037) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000038) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000039) 4 bytes
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 170
+[INFO: TSCH-LOG  ] {asn 00.00004145 link  2  31   0  0  2 ch 20} uc-1-0 rx LL-9d87->LL-de4d, len  21, seq 170, edr   0
+[DBG : TSCH Queue] packet is added put_index 6, packet #0x200016a0
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000003a) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000003b) 4 bytes
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 65535
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,269)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[INFO: TSCH-LOG  ] {asn 00.000042d8 link  2  31   0  0  2 ch 26} bc-1-0 rx LL-9d87->LL-NULL, len  94, seq 170, edr   0
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 161
+[INFO: RPL       ] Received a DAO from fe80::212:4b00:18e6:9d98
+[DBG : RPL       ] Received a (unicast) DAO with sequence number 244 from fe80::212:4b00:18e6:9d98
+[INFO: RPL       ] DAO lifetime: 0, prefix length: 128 prefix: fd00::212:4b00:18e6:9d87
+[INFO: RPL       ] No-Path DAO received
+[INFO: TSCH-LOG  ] {asn 00.000042f7 link  2  31   0  0  2 ch 25} uc-1-0 rx LL-9d98->LL-de4d, len  74, seq 161, edr   1
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 36, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000042fc link  0 397   0 77  0 ch 15} bc-0-0 tx LL-de4d->LL-NULL, len  35, seq  36, st 0  1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000003c) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000003d) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000003e) 4 bytes
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d98
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,262)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[INFO: TSCH-LOG  ] {asn 00.000044a9 link  2  31   0  0  2 ch 20} bc-1-0 rx LL-9d98->LL-NULL, len  94, seq 161, edr   1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000003f) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000040) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000041) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000042) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000043) 4 bytes
+[DBG : TSCH Queue] packet is added put_index 7, packet #0x200016a0
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 172
+[INFO: TSCH-LOG  ] {asn 00.00004772 link  2  31   0  0  2 ch 15} uc-1-0 rx LL-9d87->LL-de4d, len  21, seq 172, edr   0
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 128 dioint 17, nbr count 2
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 37, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000047a3 link  0 397   0 77  0 ch 20} bc-0-0 tx LL-de4d->LL-NULL, len  35, seq  37, st 0  1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000044) 4 bytes
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 173
+[INFO: TSCH-LOG  ] {asn 00.00004c0c link  2  31   0  0  2 ch 26} uc-1-0 rx LL-9d87->LL-de4d, len  21, seq 173, edr   1
+[DBG : TSCH Queue] packet is added put_index 0, packet #0x200016a0
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000045) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000046) 4 bytes
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 38, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00004dd7 link  0 397   0 77  0 ch 20} bc-0-0 tx LL-de4d->LL-NULL, len  35, seq  38, st 0  1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000047) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000048) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000049) 4 bytes
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000004a) 4 bytes
+[DBG : RPL       ] DIO Timer triggered
+[DBG : RPL       ] Sending prefix info in DIO for fd00::
+[INFO: RPL       ] Sending a multicast-DIO with rank 128
+[DBG : TSCH Queue] packet is added put_index 5, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 94
+[DBG : RPL       ] Scheduling DIO timer 6315 ticks in future (sent)
+[DBG : RPL       ] RPL: MOP 3 OCP 1 rank 128 dioint 17, nbr count 2
+[DBG : RPL       ] RPL: end of list
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 39, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.0000519e link  2  31   0  0  2 ch 15} bc-1-0 tx LL-de4d->LL-NULL, len  94, seq  39, st 0  1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000004b) 4 bytes
+[DBG : TSCH Queue] packet is added put_index 1, packet #0x200016a0
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 40, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.0000527e link  0 397   0 77  0 ch 26} bc-0-0 tx LL-de4d->LL-NULL, len  35, seq  40, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 174
+[INFO: RPL       ] Received a DAO from fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Received a (unicast) DAO with sequence number 244 from fe80::212:4b00:18e6:9d87
+[INFO: RPL       ] DAO lifetime: 30, prefix length: 128 prefix: fd00::212:4b00:18e6:9d87
+[INFO: RPL       ] Adding DAO route
+[DBG : RPL       ] Updating single hop route for fd00::212:4b00:18e6:9d87[DBG : RPL       ]  -> fe80::212:4b00:18e6:9d87[DBG : RPL       ]  to fe80::212:4b00:18e6:9d87
+[INFO: RPL       ] Added a route to fd00::212:4b00:18e6:9d87/128 via fe80::212:4b00:18e6:9d87
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 175
+[INFO: RPL       ] Received a DAO from fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Received a (unicast) DAO with sequence number 244 from fe80::212:4b00:18e6:9d87
+[INFO: RPL       ] DAO lifetime: 30, prefix length: 128 prefix: ff1e::89:abcd
+[INFO: TSCH-LOG  ] {asn 00.000052d4 link  2  31   0  0  2 ch 26} uc-1-0 rx LL-9d87->LL-de4d, len  74, seq 174, edr   1
+[INFO: TSCH-LOG  ] {asn 00.000052d5 link  2  31   1  1  2 ch 26} uc-1-0 rx LL-9d87->LL-de4d, len  74, seq 175, edr   1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000004c) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 6, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 41, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.0000533c link  1  21   0 14  1 ch 25} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  41, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: TSCH-LOG  ] {asn 00.00005348 link  1  21   0  5  1 ch 25} bc-1-0 rx LL-9d98->LL-NULL, len  41, seq 175, edr   0
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 162
+[INFO: RPL       ] Received a DAO from fe80::212:4b00:18e6:9d98
+[DBG : RPL       ] Received a (unicast) DAO with sequence number 245 from fe80::212:4b00:18e6:9d98
+[INFO: RPL       ] DAO lifetime: 30, prefix length: 128 prefix: fd00::212:4b00:18e6:9d98
+[INFO: RPL       ] Adding DAO route
+[DBG : RPL       ] Updating single hop route for fd00::212:4b00:18e6:9d98[DBG : RPL       ]  -> fe80::212:4b00:18e6:9d98[DBG : RPL       ]  to fe80::212:4b00:18e6:9d98
+[INFO: RPL       ] Added a route to fd00::212:4b00:18e6:9d98/128 via fe80::212:4b00:18e6:9d98
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 163
+[INFO: RPL       ] Received a DAO from fe80::212:4b00:18e6:9d98
+[DBG : RPL       ] Received a (unicast) DAO with sequence number 245 from fe80::212:4b00:18e6:9d98
+[INFO: RPL       ] DAO lifetime: 30, prefix length: 128 prefix: ff1e::89:abcd
+[INFO: TSCH-LOG  ] {asn 00.0000536f link  2  31   0  0  2 ch 25} uc-1-0 rx LL-9d98->LL-de4d, len  74, seq 162, edr   0
+[INFO: TSCH-LOG  ] {asn 00.00005370 link  2  31   1  1  2 ch 25} uc-1-0 rx LL-9d98->LL-de4d, len  74, seq 163, edr   0
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000004d) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 7, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 42, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000053e4 link  1  21   0 14  1 ch 25} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  42, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: TSCH-LOG  ] {asn 00.000053f0 link  1  21   0  5  1 ch 25} bc-1-0 rx LL-9d98->LL-NULL, len  41, seq 163, edr   1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000004e) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 0, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 43, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00005573 link  1  21   0 14  1 ch 15} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  43, st 0  1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x0000004f) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 1, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 44, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000055b2 link  1  21   0 14  1 ch 20} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  44, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: TSCH-LOG  ] {asn 00.000055be link  1  21   0  5  1 ch 20} bc-1-0 rx LL-9d98->LL-NULL, len  41, seq 164, edr   1
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000050) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 2, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 45, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.00005684 link  1  21   0 14  1 ch 25} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  45, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: TSCH-LOG  ] {asn 00.00005690 link  1  21   0  5  1 ch 25} bc-1-0 rx LL-9d98->LL-NULL, len  41, seq 164, edr   0
+Send to: ff1e::89:abcd Remote Port 3001, (msg=0x00000051) 4 bytes
+sending via broadcast-per-neighbor slot
+[DBG : TSCH Queue] packet is added put_index 3, packet #0x200016a0
+[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 191, queue 1 1, len 14 32
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 46, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000056d8 link  1  21   0 14  1 ch 25} bc-1-0 tx LL-de4d->LL-NULL, len  32, seq  46, st 0  1
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d98 with seqno 65535
+[INFO: TSCH-LOG  ] {asn 00.000056e4 link  1  21   0  5  1 ch 25} bc-1-0 rx LL-9d98->LL-NULL, len  41, seq 164, edr   1
+[DBG : TSCH Queue] packet is added put_index 2, packet #0x200016a0
+[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+[INFO: TSCH      ] received from 0012.4b00.18e6.9d87 with seqno 65535
+[INFO: RPL       ] Received a DIO from fe80::212:4b00:18e6:9d87
+[DBG : RPL       ] Incoming DIO (id, ver, rank) = (30,240,263)
+[DBG : RPL       ] Incoming DIO (dag_id, pref) = (fd00::212:4b00:14b5:de4d, 0)
+[DBG : RPL       ] Incoming DIO (option, length) = (4, 14)
+[INFO: RPL       ] DAG conf:dbl=8, min=12 red=10 maxinc=896 mininc=128 ocp=1 d_l=30 l_u=60
+[DBG : RPL       ] Incoming DIO (option, length) = (8, 30)
+[INFO: RPL       ] Copying prefix information
+[DBG : RPL       ] Prefix announced in DIO
+[INFO: RPL       ] Prefix set - will announce this in DIOs
+[INFO: TSCH-LOG  ] {asn 00.00005809 link  2  31   0  0  2 ch 20} bc-1-0 rx LL-9d87->LL-NULL, len  94, seq 164, edr   1
+[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 47, status 0, tx 1
+[INFO: TSCH-LOG  ] {asn 00.000058b2 link  0 397   0 77  0 ch 26} bc-0-0 tx LL-de4d->LL-NULL, len  35, seq  47, st 0  1
+
